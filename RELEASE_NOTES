@@ -1,0 +1,1027 @@
+/*
+ * Copyright (C) 2002-2021 FlyMine
+ *
+ * This code may be freely distributed and modified under the
+ * terms of the GNU Lesser General Public Licence.  This should
+ * be distributed with the code.  See the LICENSE file for more
+ * information or http://www.gnu.org/copyleft/lesser.html.
+ *
+ */
+InterMine 5.0.6 (Dicember 2021)
+
+#2414 - Upgraded psi lib version (thanks @asherpasha)
+#2416 - Log4j upgraded to 2.17.1 (thanks @asherpasha)
+
+InterMine 5.0.5 (Dicember 2021)
+
+#2411 - Log4j-1x compatibility upgrade (thanks @asherpasha)
+
+InterMine 5.0.4 (Dicember 2021)
+
+#2324 - Remove dependency from EBI maven nexus repo
+#2377 - Updated GFF3Record (thanks @sammyjava)
+#2396 - Biogrid extension
+#2392 - Public name can be taken by deleted account
+#2397 - Implement a new WS to summarise templates
+#2398 - Implement a new WS to precompute templates
+#2399 - Update the GET /templates WS to show which templates user can make change
+#2400 - Update the PUT /bluegenes-properties WS to use body
+#2402 - WebProperties WS returns blugenes properties too
+#2404 - Update CI to use Python 3.7
+
+InterMine 5.0.3 (June 2021)
+
+#2375 - Update interpro_keys.properties
+#2376 - Update interpro-go_keys.properties
+#2384 - Enrichment widget not working when changing background population
+
+InterMine 5.0.2 (May 2021)
+
+#2335 - BioGrid data change causing loader to throw Exception
+#2344 - Why feature.setAttribute("scoreType", record.getSource()) in  GFF3Converter.java?
+#2352 - Enrichment web service fails if using ids and background population 
+#2356 - Graph and table windgets WSs do not work when passing IDs
+#2358 - Check the type in the bag upload form
+#2367 - preparation release 5.0.1
+
+InterMine 5.0.1 (May 2021) - Broken
+Due to a sync issue, the bio-webapp 5.0.1 artifact has been built wrapping intermine-webapp 5.0.0 instead of 5.0.1 and as a consequence, it doesn't contains some of the following fixes.
+Please use 5.0.2 instead.
+#2344 - Why feature.setAttribute("scoreType", record.getSource()) in  GFF3Converter.java?
+#2352 - Enrichment web service fails if using ids and background population 
+#2356 - Graph and table windgets WSs do not work when passing IDs
+#2358 - Check the type in the bag upload form
+#2367 - preparation release 5.0.1
+
+InterMine 5.0.0 (April 2021)
+
+#1720 - Need Google OAuth2 authentication web service end points
+#1835 - When trying to create a list with the same name as another list via api, give informative error
+#2173 - Password reset / I forgot my password service
+#2177 - Include bgpath: prefixed tags in responses to lists webservice
+#2201 - Include creation/last modified date in saved queries webservice
+#2263 - Fixed UniprotFastaLoaderTaskTest see #2259
+#2269 - Add externalLink webservice
+#2280 - Webservice for sending feedback
+#2288 - 200 OK response when deleting unauthorized list (instead of 400)
+#2290 - Add appropriate error message when renaming a list to something existing
+#2295 - Webservice as key-value store for Bluegenes properties
+#2315 - Upgrade List: new webservice for bluegenes
+#2325 - Disallow adding tags for unauthorized lists
+#2327 - Frictionless
+#2328 - DataRecord (bioscehmas profile) deprecated 
+#2337 - Support passing project.credits in web-properties ws
+#2345 - Remove dependency on jcenter
+
+InterMine 4.3.1 (March 2021)
+
+#2311 - Continuos Integration with githubactions
+#2317 - Update build.gradle
+#2331 - Remove invalid draw options, fixing geneExpressionAtlas displayers
+#2338 - Update copyright
+#2339 - Migrate from Travis to Actions
+
+InterMine 4.3.0 (December 2020)
+
+#2308 - Enabling bioschemas markup with JAVA 11 throws an error
+#2274 - Obo: added a new generic obo file source that is configured in project.xml so that it can be used for any ontology (thanks @sammyjava)
+#2276 - Removed gretty plugin (from testmine) which does't work with gradle 4.9
+#2279 - NullPointerException in report page caused by generating permanent url link (Share button)
+#2281 - Npe report page
+#2282 - Google Charts API broke various things, including the humanmine expression viewers. 
+#2296 - Update google auth and userinfo endopoints
+#2305 - Fix format=jsonobjects queries for simple root classes (thanks @sammyjava)
+      - The so.obo file has been removed from the bio-source-so to avoid duplication 
+
+InterMine 4.2.0 (June 2020)
+
+#1650 - Need way to upgrade anonymous sessions via web service
+#1969 - FAIR: add profile Gene and Protein markup to the report page
+#2099 - Need webservice endpoint that identifies if superuser
+#2142 - Create a new logout service
+#2144 - Update the /user endpoint to allow to change password
+#2148 - Add PUT method to the /lists webservice to update the description
+#2149 - Update the /users endpoint to attach to the user just created the lists created anonymously
+#2155 - FAIR: adopt DataRecord type in the report page
+#2199 - Invalid JSON response to POST /user/queries
+#2205 - Update change password webservice to require current password
+#2207 - Add clearLocation() to removeFeature() (thanks @sammyjava)
+#2215 - Fix organism short name formation (thanks @ahmedihafez)
+#2236 - Remove BioEntity.ontologyAnnotations because redundant (thanks @sammyjava)
+#2237 - Editing  a Date filter on the results table shows Service failed message
+#2239 - BAR ThaleMine - 6: Fixed a minor bug in reports page long fields (thanks @asherpasha)
+#2240 - BAR ThaleMine - 7: go-annotation loader (thanks @asherpasha)
+#2242 - /service/templates is missing optional constraint if format=json
+#2246 - Issues related to fields with type Date
+#2252 - Added a new bio source to load ISA files in json format
+#2253 - src.data.dir.includes and src.data.dir in project.xml not always work as expected
+#2255 - Added BioChemEntity (via configuration) markup
+#2259 - UniProtFastaLoader doesn't extract the organism name composed by more than 2 words
+#2264 - Add licence to the OboConverter
+
+InterMine 4.1.3 (March 2020)
+
+#2208 Delete a template -> it's still displayed on the Templates tab
+#2203 Public template creation broken
+#2204 vcf bio source does not work
+#2190 Fix invalid response to /service/web-properties
+#2212 In the report page, links to HumanMine/FlyMine are empty 
+
+ 
+InterMine 4.1.2 (January 2020)
+
+#2045 - DataSet URLs do not appear in tables; do show in report heading
+#2053 - LOOP query in webapp does not work!
+#2107 - Remove "upload to GenomeSpace" export
+#2112 - Remove im.js, imtables.js, imtables-dep.js from intermine-webapp
+#2120 - The operation was a success, but the patient died: creating solr index fails but gradlew reports success.
+#2127 - Update to Java11
+#2129 - Catch runtime exception in BagManager.getBags
+#2145 - Complex Displayer fixed
+#2151 - ThaleMine Updates to psi BioSource
+#2152 - ThaleMine Updates to BioGrid
+#2154 - Update json-ld home page
+#2158 - Use info stored in the registry to set provider/support in the home page markup
+#2159 - Travis fails - could not GET jami-interactionviewer-json
+#2160 - Update chebiWS-client (psi-complexes bio-source)
+#2161 - Licence dataset display null 
+#2164 - Add gff source to the bio/source multi gradle project
+#2172 - WebservicePythonCodeGenerator updated according to Python's code styling PEP8
+#2178 - Improve permanet URI configuration
+#2184 - Minor bug fix
+Update copyright notice with 2002-2020
+
+InterMine 4.1.1 (October 2019)
+
+#2128 - ThaleMine: Gradle 4.9 / Java 11 migration.
+#2135 - data change in ncbi-gff 
+#2136 - Add code of conduct
+#2137 - ThaleMine issues
+
+InterMine 4.1.0 (September 2019)
+
+#1770 - Default query config should be in json
+#1819 - Galaxy plugin - InterMine
+#1915 - Gradle 4.1 is to old for Java 11
+#1947 - YeastMine: gradle migration
+#2015 - FASTA query result: CDS translation option
+#2016 - Fasta query results: extra view parameters not showing up in header correctly
+#2040 - Can we remove flymine dependencies from core IM?
+#2044 - ONE OF contraint not working in template form
+#2051 - Seems that css path is wrong in keywordSearchResults.jsp
+#2052 - apply fix to TemplateAction to im 4.0?
+#2054 - Docs: Add instructions on how to make a Mine.
+#2055 - Put galaxy URL in global properties
+#2056 - Project script: update to handle release param correctly
+#2070 - NCBI gene data
+#2073 - GO error - obsolete term
+#2074 - Complexes - duplicate protein accessions
+#2102 - add elixir-login image to the login page
+#2103 - Fix google-login button in the login page
+#2108 - Move ELIXIR oauth2 configuration to global.web.properties file
+
+InterMine 4.0.1 (July 2019)
+
+#2060 - Restore Strains to core data model
+
+InterMine 4.0.0 (May 2019)
+
+#1935 - Decorate the model with ontology terms (where possible)
+#1939 - Store data licences for integrated sources
+#1940 - Provide data licences for integrated sources
+#1941 - GO Annotation - data set is where we get the data file
+#1968 - FAIR: add schemas.org (both schemas can be used)
+#1969 - FAIR: add profile Gene and Protein markup to the report page
+#1978 - Check if lists created overlap with other public lists (and user's lists)
+#2030 - Null pointer exception when user doesn't have any lists. 
+
+InterMine 3.1.2 (April 2019)
+
+#704 - Keyword search - fail gracefully if there is no search index
+#1497 - Docs: links in search results drop .html extension, only on index pages.
+#1766 - Web services: Add tags to templates
+#1773 - Gradle: when installing bio project, intermine-bio-test.properties SHOULD NOT be mandatory
+#1909 - Gradle: logs need sorting out
+#1952 - GAF 1.0 - remove this code
+#1965 - bio and bio/sources: java.lang.ClassCastException on org.apache.xerces.parsers
+#1980 - Gradle: model isn't merging correctly on postprocess on large InterMine items XML file
+#1984 - Set converter.class in the right place
+#1988 - Fix protein atlas displayer in humanmine
+#2001 - NCBI web services = error with NULL values
+#2002 - modify SolrIndexHandler to support newer Solr versions (thanks @arunans23!!)
+#2007 - Gretty plugin - remove from bio-webapp?
+#2008 - Error using CHEBI web services
+#2009 - Publication abstract is longer than postgres index
+#2013 - Remove Phenotype, it's not in the core model and has conflicting key (thanks @sammyjava)
+#2017 - Gretty plugin - remove from mine-webapp
+#2020 - Fix the protein atlas expression viewer
+#2036 - ObjectStoreSummary does not handle ignored fields consistently. (thanks @JoeCarlson )
+
+InterMine 3.1.1 (Feb 2019)
+
+#1726 - Add system templates end point for converter templates.
+#1732 - Web service bug in /templates?format=json
+#1770 - Default query config should be in json
+#1786 - GFF3: add header to record
+#1796 - GFF3SequenceHandler - add docs and pass in feature object
+#1811 - webservice xml queries failing with greater and less than operators
+#1828 - DNaseI_hypersensitive_site (SO:0000685) misspelled
+#1833 - Data types in NCBI GFF that are not in the sequence ontology
+#1847 - Error parsing DOES NOT CONTAIN constraint
+#1887 - OMIM: fix link outs
+#1902 - Gradle: need /themes directory to merge correctly
+#1906 - Enrichment widget: update link to GO (humanmine and flymine)
+#1914 - InterPro DTD version
+#1956 - Autocomplete fails to build: missing content stream
+#1977 - publication with null title 
+#1982 - Need upgrade path for biojava
+#1983 - Fix log library dependency conflict
+#1989 - Spelling fix on genomicRegionSearchOptionsBase.jsp 
+#1992 - Remove Yahoo login link
+#1994 - HumanMine - gene summaries from NCBI
+#1995 - Panther - Entry only has protein accession and the taxon id in place of the gene identifier.
+#1996 - OMIM - failed on bad line
+#1999 - HPO errors - can't handle "created_by" metadata
+#2000 - Add UniProt xref file to data download script
+#2006 - Updated gretty.plugin URL
+
+InterMine 3.1 (late November 2018)
+
+#1596 - InterMine Core Data model - Annotation, assembly and variety
+#1948 - PSI Complexes - remove bad key
+#1950 - Remove ecnumbers String from Protein, it's an object now.
+
+InterMine 3.0.0 (November 2018)
+
+#517 - Improve Lucene search
+#562 - Keyword search - speed up initial search
+#871 - Replace bobo with Lucene facets
+#1632 - Add search facets webservice
+
+InterMine 2.1.1 (late October 2018)
+
+#1916 - Adds versions to postprocesses
+
+InterMine 2.1 (October 2018)
+
+#1583 - Update InterMIne code generation to be Python 3 compatible
+#1803 - Discontiguous CDS sequences and lengths not set properly
+#1844 - FASTA query web service: times out when extensions are used
+#1881 - Regions bug: trying to leave extended region field blank results in error message that takes over the page
+#1892 - Update publications: POST instead of GET
+#1895 - Some SO terms were not updated in 2.0 release
+
+InterMine 2.0 (Summer 2018)
+
+#39 - Keyword search autocomplete enabled
+#83 - BioJava - update library
+#160 - Create ECO data parser and add descriptions to GO evidence codes
+#397 - Spin out the java webservice client from the server code
+#412 - Process xrefs correctly in OBO files, e.g. alt_ids
+#464 - Remove dependency on tomcat
+#482 - Make filter edit / delete icons more clear
+#600 - Write up tutorial on how to write a Java source
+#611 - Upgrade ant jar
+#612 - Maven - try using Gradle instead of Ant for dependency management
+#767 - Move sub-projects to their own repo
+#831 - Organism config - needs updating
+#836 - OrthDB - fail if invalid config
+#861 - postprocessing 'do-sources' with many sources fails
+#917 - JBrowse - update config
+#940 - Need public registry for friendly mines.
+#941 - im-ant-tasks JAR can't be created
+#971 - PSI Interactions - taxon ID is strain 
+#983 - Layout.jsp - remove old variable
+#1030 - Data sets should have more details - descriptions and pubs
+#1093 - Add to list: does not see there other relevant lists when picking items from the table
+#1099 - UniprotKB now uses evidence codes from the Evidence Ontology (ECO)
+#1109 - Bioseg error messages in postgres on webapp deploy
+#1168 - PSI-Complexes -- allow for more data types 
+#1177 - Genome browser
+#1215 - Web services: make template popularity available
+#1278 - Checkstyle 6 
+#1312 - Interactions widget not displaying correctly in live humanMine
+#1327 - Query web services should accept JSON queries.
+#1343 - Java 8 - Duplicate default methods 
+#1351 - Postprocess for datasource with multiple entries in the project file
+#1358 - Protein molecular weight - change to be a float instead of integer
+#1405 - Replace iharder and apache.commons Base64 impls with Base64 in Java 8 SDK
+#1450 - org.json jar file is old and lacks some JSON spec methods
+#1477 - Update PathQueryHandler deleting code related to the node tag
+#1483 - Migrate to gradle
+#1510 - Split post-processors out the way data sources are
+#1525 - Add SyntenicRegion and SyntenyBlock to core data model
+#1531 - Remove legacy code for upgrading 
+#1602 - FASTA source - make sure biojava.jar is in main/lib
+#1604 - Footer broken
+#1608 - Java client - requires genomic model
+#1620 - Ontology Annotations: Annotate all the things!
+#1655 - JSON and XML queries are different
+#1656 - Loop constraints are implemented incorrectly in JSON
+#1657 - Remove legacy registry code.
+#1669 - Add list id to the result of query/tolist service
+#1674 - Remove legacy flymine/doc
+#1675 - We are using sets and lists interchangably
+#1676 - End points have an attribute for queries called "XML". We accept JSON queries so this attribute name is becoming increasingly inaccurate.
+#1677 - Delete HintManager
+#1684 - Clients - update to use registry
+#1689 - Move GO annotation evidence to Ontology annotation
+#1694 - UniProt - loading retracted papers
+#1697 - Update JSON jar
+#1707 - Genomic Intervals as GFF3 - needs strandSpecific parameter
+#1719 - NCBI web services - new API rules (3 requests per second)
+#1723 - Intermine Registry: please set Access-Control-Allow-Origin
+#1734 - Update Chebi JAR
+#1738 - Update so.obo to latest version
+#1747 - Asking for non-expiring API token should generate one if doesn't exist
+#1751 - Registry - add organisation and URL
+#1754 - OMIM: not loading a gene-disease relationship
+#1759 - BioJava - update JAR 
+#1761 - HumanMine: External Links broken
+#1765 - Update URLGenerator.java to handle HTTPS sites 
+#1774 - GO: data load now takes 3 hours instead of 10 minutes
+#1777 - Region search: update API to include strandSpecific
+#1790 - Need old integrate/resources/organism_config.properties functionality
+#1792 - Galaxy: export failed - update URL
+#1798 - Model change: move HPO annotations to be annotable
+#1804 - Panther: bad data
+#1812 - Update Postgres and Hikari driver
+#1821 - Change taxon ID to be a String
+#1831 - GO annotation - new evidence code HDA
+#1838 - Update version of Postgres JDBC driver?
+#1839 - Galaxy: fix bug that required user to retype the Galaxy URL
+#1850 - HumanMine: Some genes don't have Ensembl identifier
+
+InterMine 1.8.5 (2017 August)
+
+#1661 - Anonymous session tokens are not authenticating
+
+InterMine 1.8.4 (2017 August)
+
+#961 - Need way of referring to lists stably
+#1494 - LOOKUP and List upload use BagQueryRunner. Need different "match" behaviour
+#1555 - Add cytological data to humanMine
+#1600 - Need web service endpoint to generate permanent API tokens
+#1606 - Portal - go to disambiguation page if there are issues
+#1607 - Add GTEx data
+#1611 - remove obsolete constraint operators
+#1613 - OBO files have terms without names
+#1614 - HumanMine: missing exons
+#1621 - HumanMine: add cytolocation
+#1626 - Remove intermine/scripts
+#1631 - Add defaults web service for each mine
+#1636 - Only look in public schema when counting rows in a table
+#1648 - Templates export in JSON format causes deadlock.
+#1652 - Add user ID to web service output
+
+InterMine 1.8.3 (2017 July 12)
+
+#1623 Add branding parameters for external apps. 
+
+InterMine 1.8.2 (2017 July)
+
+#205 - add 4 numbers used to calculate enrichment to web services
+#1603 - revert logo changes on footer (temporarily)
+
+InterMine 1.8.1 (2017 June)
+
+Update copyright notice
+
+InterMine 1.8 (2017 June)
+
+#288 - List actions (set operations) greyed out but active
+#439 - Sharing lists -- need better message when owner hasn't upgraded lists
+#702 - Add "Show Tags" option to Lists page
+#739 - filter encoding property in Database.java
+#786 - Query with outer join does not validate
+#789 - services.json should contain mine appropriate defaults
+#802 - Region search file upload doesn't handle blank lines
+#812 - Issues with Date data type
+#820 - Documentation on date formats (Items XML)
+#910 - Usernames containing upper-case letters created via the web service can never log in.
+#942 - Allow superclass lists in template list constraints
+#964 - quicksearch service should report total hits
+#966 - add db parameter for schema
+#1174 - Can't share lists with google logins
+#1181 - Transfer sequences - not processing transcript sequences correctly
+#1212 - Web service: list union - resulting type is NULL
+#1269 - GFF parser - ignoring parents leaves children orphans
+#1296 - List converter with subtype constraint fails
+#1309 - Provide a template's popularity score in /service/templates
+#1325 - GFF parser - gff config should be source-specific
+#1328 - Cannot change LOOKUP filter in results table
+#1382 - Templates page - my mine - add summarise all link
+#1455 - Don't add ORDER BY clause to count(*) queries
+#1458 - Queries page only shows the last saved query
+#1471 - Drop LOOKUP constraint if value is *
+#1486 - Allow the name attribute to be missing 
+#1495 - Fix a caching bug in strand specific region search
+#1505 - InterMine webservices are not compatible with Python3
+#1507 - Unescaped pipes in the trail break tomcat 8
+#1515 - GFF3 export - not adding columns
+#1516 - support for DOES_NOT_CONTAIN in query xml 
+#1523 - Userprofile backup script - more improvements
+#1526 - Post build updating with SQL triggers
+#1551 - handle the case where isoforms have multiple accessions. 
+#1557 - Correctly save lists after logging in
+#1569 - Update FASTA text on region search
+#1572 - We've lost the trail
+
+InterMine 1.7.3 (2017 May)
+
+#582 - Remove partially implemented GAF export
+#1052 - FlyMine: Stop loading Golden Path Fragments
+#1086 - FlyMine: handle NCBI transcripts correctly
+#1286 - Enable making a list from mRNA lists
+#1410 - Make display names for collections and references available as JSON model
+#1418 - Add UniProt accession as Xrefs.
+#1444 - FlyMine: Don't load protein locations.
+#1493 - Update URL for OMIM download script
+#1496 - Load OMIM disease for Human Phenotypes
+#1502 - Gene length correction missing from GO widget
+#1532 - update-publications job fails if using UTF8 encoding
+#1536 - Add link to ToxyGates
+#1537 - MGI alleles file had an extra tab causing havoc. Always check for valid pubmed id.
+#1538 - Add Signor data source - signalling data
+#1539 - Tomcat 9 errors
+#1545 - OBO Source loader to handle multiple crossReferences
+
+InterMine 1.7.2 (2017 April)
+
+#1533 - Update code to adapt to google API changes
+
+InterMine 1.7.1 (2017 January)
+
+#1482 - Error when creating a list and accessing via the web service via tablerows method.
+
+InterMine 1.7 (2016 Xmas)
+
+#1480 - Check interaction count on client not server side. Works for proteins and genes now.
+#1462 - Removed old style path queries
+#1469 - Error when creating a list and accessing via the web service
+#1473 - Strand specific search off by default
+#1475 - Update postgresql JDBC driver to fix error with postgres 9.6 
+
+InterMine 1.6.9 (2016 November)
+
+#1422 - Constrain widget results. 
+#1425 - Region Search: allow strand-specific search
+#1431 - GFF source: ScoreType is required to parse the file but not required in GFF3 specs 
+#1441 - Region Search: Fix integer truncation bug for Extended Regions
+#1443 - HTTPS - web services using hardcoded HTTP 
+#1451 - The copy of a list by an un-logged user, saves the new list into db with the same name
+#1456 - HPO source: doesn't capture publication if there is more than one
+
+InterMine 1.6.8 (2016 September 20)
+
+Fix for Region search [595e786]
+Fix for FlyAtlas expression widget [#1141]
+Fix for mail update [9211ab7]
+
+InterMine 1.6.7 (2016 September 7)
+
+#421 - Results table forgetting toggle state
+#593 - cdn.intermine.org in generated JavaScript
+#845 - Some tests fail occasionally
+#1204 - Cytoscape: clean up
+#1226 - Userprofile backup script - improvements
+#1364 - Web service: for enrichment, gene length correction requires list
+#1369 - Deleting templates doesn't really delete them
+#1370 - Issues with https
+#1372 - Human data: add ClinVar data parser
+#1375 - Mail: add replyto param
+#1376 - HTTPS - still not working as expected
+#1378 - OMIM script fails
+#1381 - InterPro - added a new database
+#1383 - Bootstrap fails
+#1384 - NCBI moving to HTTPS
+#1385 - HPO - too many diseases
+#1386 - Disease - add data set
+#1387 - Disease - add Orphanet source
+#1388 - Docker: tomcat uses a different port
+#1396 - template.do XSS vulnerability
+#1398 - Travis tests failing
+#1402 - Refactor Mail
+#1404 - Lists endpoint returns bad lists (Lists that need to be upgraded)
+
+
+InterMine 1.6.6 (2016 13 May, Friday the 13th)
+
+#1361 - Correct Panther homologue labels
+#1322 - HumanMine keyword search is returning atomic coordinates of protein structures
+#1318 - Inconsistent session expiration
+#1301 - Enabled/disabled styling on template forms
+#1297 - Template generates bad web service URL
+#1293 - GO parser: missing additional publication IDs
+#1292 - IntAct: resolve all Ensembl identifier not just the ones in NCBI file
+#1284 - App gene report page kills HumanMine
+#1283 - Region search: not returning SNPs
+#1282 - stepZ - working with results sets
+#1277 - Complex - interacting region has two locations
+#1276 - Footer - make like YeastMine
+#1274 - Publication Enrichment - download fails on NULL pubmed ID
+#1270 - GFF parser - allow for multiple locations
+#1267 - GFF parser - removeFeature() leaves synonyms
+#1260 - Web services: add an intermine version web service
+#1259 - NCBI GFF - create parser
+#1258 - Enrichment widget: accept identifiers instead of just the list
+#1252 - ID resolver - update human IDs file.
+#1251 - NCBI parser - for synonyms
+#1250 - Add synonyms to Ensembl XML generating script
+#1249 - HGNC parser
+#1248 - List upload: error
+#1245 - Hardcoded CDN values
+#1239 - errorMessages tile missing?
+#1225 - Cytoscape: less mean error message
+#1202 - UniProt: comments not capturing disease
+#1201 - Results tables - external link outs don't work on objects without organism, e.g. Pubs
+#1200 - HumanMine: load synonyms
+#1191 - PubMed: remove obsolete classes
+#1189 - HumanMine - add illumina body map.
+#1180 - Postgres warning - connection closed
+#1160 - 'Contact Us' link not working
+#1104 - PFam data loader
+#1082 - PDB - use restful API instead of manual download
+#1073 - cannot change default file name in imtable export 
+#1046 - XenMine - list creation error
+#1015 - Panther and Homologene - Mouse genes are not being merged correctly
+#986 - JS tests failing 
+#984 - oAuth2 error text needs updating
+#930 - Blog for InterMine / human InterMine
+#925 - CHEBI data source
+#918 - GOAnnotation has an empty publications collection
+#764 - cytoscape display export: error #3769
+#763 - cytoscape diagram not right in yeastmine
+#717 - Export broken in cytoscape viewer
+#624 - wrapping of java errors, contact us form
+#601 - Keyword search - organism facet not being returned for some genes
+#586 - FlyMine - make the childFeatures correct
+#566 - Keyword search - don't index IDs
+#500 - Code generation needs platform specific line endings
+#449 - Quick search results only retrieving first 100 rows
+#426 - Web service URL for templates constrained to a list doesn't work.
+#414 - Reword error message
+#206 - GO enrichment widget - accessed via webservice
+#148 - Add more orthologue data sets to mastermine
+#78 - Save changes to query results as new query
+
+
+
+InterMine 1.6.5
+
+#1255 - Restore missing template counts
+#1253 - Web service: error running template to list
+#1244 - MyMine: export tags fails
+#1240 - Keyword search: remove link to entire index
+#1232 - uniprot-fasta loading problem
+#1222 - Web service: /list/tags doesn't work
+#1202 - UniProt: comments not capturing disease
+#1194 - Add human data to KEGG unit test
+#1188 - Properly generate sequences based on type
+#1080 - BioGRID config doesn't work correctly for symbols
+#929 - PDB hardcoded for FlyMine
+#565 - OMIM - add unit test
+
+InterMine 1.6.4
+
+#1221 - Template queries in my mine: can't export 
+
+InterMine 1.6.3
+
+#1236 - Keyword Search: don't show entire index if no keyword provided. 
+#1179 - PDB failing 
+#1190 - Atlas express source 
+
+InterMine 1.6.2
+
+#1228 - Fix tutorial, remove interpro
+#1184 - Keyword search: first search takes you to home page
+#1168 - PSI-Complexes -- allow for more data types
+#1154 - Web services: tags for templates
+
+InterMine 1.6.1
+
+#1216 - Make region.start and end integers instead of strings
+#1209 - Fix Panther for Drosophila
+#1205 - Cytoscape fix for protein report page
+
+InterMine 1.6 (Halloween 2015)
+
+#1187 - GO enrichment widget -- gene length normalisation error
+#1164 - GO enrichment widget -- background change error
+#1163 - QueryBuilder: error querying for NULL relationships
+#1153 - FlyMine: create-utr-references is failing
+#1150 - IntegrationWriterDataTrackingImplTest failing tests, sometimes.
+#1147 - Web service: speed up requests
+#1142 - List Analysis - doesn't show the list contents for SNVs
+#1136 - Problem with SNV list analysis page on upload
+#1135 - FlyMine: postprocess failed on UTR references
+#1125 - UniProt: add publications to genes too
+#1124 - CORS issues
+#1121 - Query Builder: cannot query for disease names because of trailing whitespace
+#1116 - Make protein isoforms collection
+#1114 - YeastMine: serial number not being reset
+#1108 - Point Mutations: new index doesn't seem to handle features of size = 1;
+#1105 - HumanMine - add UniProt fasta
+#1103 - FlyMine: bad locations being created when there are no gaps between features
+#1102 - Result table preview with many collections overflows off screen.
+#1095 - FlyMine: Queries using overlaps are failing
+#1094 - Code generation not updating in result tables in Safari 8
+#1079 - Panther not parsing homologues parameter correctly
+#1072 - Counts missing from templates on report / list pages
+#1071 - Complexes - fails for human
+#1067 - More queries link in summary area on http://www.flymine.org/ fails
+#1065 - FlyMine: flyfish failed on dull pointer exception
+#1063 - FASTA: error loading locations
+#1058 - Esyn: change to use pipe delimiter
+#1053 - Simple objects fail to show in results tables with outer joins
+#1051 - Cytoscape network viewer - upgrade
+#1049 - Add a nicer error if EsyN network to large to load.
+#1035 - VCF data parser for InterMine
+#1032 - CORS issue - www.humanmine.org and humanmine.org
+#1024 - HumanMine config - remove bad paths
+#1019 - Duplicate BioGrid interaction data
+#992 - InterMineObjectFetcher.run() does not report a configuration error
+#968 - Reduce tracker table size
+#962 - Interaction region not a Bioentity causing problems in located features collection
+#919 - Unhelpful error when no database connections available
+#912 - Better error message for running out of connections
+#896 - keyword search task aborts silently if it encounters an error
+#834 - Fresh install on beta has issues with java 8
+#804 - Add complex interaction data to InterMine
+#745 - Tomcat 8
+#652 - Add class keys for sequence feature
+#420 - Save XML button gives "Bad URL" in Safari
+#210 - VCF data parser to load data into Intermine. 
+#169 - Load locations of protein domains
+
+InterMine 1.5.6
+
+#1075 -  Fix mising template row counts. 
+
+InterMine 1.5.5
+
+Minor fixes, plus new esyN displayer.
+
+#1027 - Outer joins break the results table
+#1020 - Manage columns labels gone
+#1017 - Panther - didn't load yeast orthologues
+#1000 - GeneLenghtCorrectionCoefficient misspelled
+#996 - Inheritance in webconfig-model.xml is inconsistant
+#988 - Download script failed on a few sources
+#986 - JS tests failing
+#980 - FlyMine: genes not being merged correctly
+#978 - template with lookup failing if selecting the organism
+#967 - Java client code gen errors
+#957 - Homologues need to merge
+
+
+InterMine 1.5.4
+
+#1021 - View on widgets opens a blank window
+#1013 - OBO converter - fails on creating synonyms. 
+#967 - Java client code gen errors
+#948 - Error during ant build-db on bio/test-all/dbmodel
+#931 - Logo for human InterMine
+#866 - Panther - rat genes
+#865 - Delete mystery properties
+#846 - InterPro - description text is too long for index
+#824 - Duplicate human genes in data file
+#722 - Table cell previews display too many fields
+#591 - Links to FlyMine contain release number
+#152 - Use ontology for data sources
+
+InterMine 1.5.3
+
+#1022 - Widget download fix
+
+InterMine 1.5.2
+
+#996 - Inheritance in webconfig-model.xml is inconsistant
+#976 - Portal doesn't correctly process homologues
+#963 - Download link for Java client is broken
+#958 - improve error message when creating list from set operation
+#957 - Homologues need to merge
+#955 - UniProt fails to parse multiple Ensembl genes 
+#937 - Travis isn't checking bio packages.
+#851 - Adding numerical constraint in results filter does not accept minus values
+
+InterMine 1.5.1
+
+#978 - template with lookup failing if selecting the organism
+#950 - Escape list description
+#943 - results table no longer supports removing a filter
+#935 - Query results - popups don't work after paging
+#800 - Angle bracket issue in column summary dialog
+#799 - Allow editing logic expression
+#796 - Support one/none of operator
+#795 - Support option lists in 'add filter' dialog
+#794 - Allow subtype constraints in results table dialogs
+#779 - Export correct strand on FASTA output with extension
+#778 - Manage Columns needs to allow addition of multiple columns 
+#753 - Query results - onhover the cell embiggens
+#744 - expand/collapse-all sub-tables does not work in 1.6.x
+#679 - Tomcat reports a memory leak on stopping a webapp
+#641 - Results table - Boolean column not filterable if it contains NULLs
+#628 - Results tables - column summary disappears on second click
+#521 - results tables default code option
+#436 - Query results - add link to query builder
+#420 - Save XML button gives "Bad URL" in Safari
+#374 - Result table download modifications
+#311 - Filter dialogue - list of fields overlaps cancel button
+#200 - Safari bug - mouseovers on results tables not working correctly
+#167 - Need a 'Creating list..' warning when creating large lists from results tables.
+#141 - Column headers for download
+
+InterMine 1.5
+
+#854 - Google is shutting down OpenID 
+
+InterMine 1.4.2
+
+#938 - Add HumanMine to list of mines in global properties.
+#927 - Reactome - assigning too many pathways
+#913 - Biogrid throws a NullPointerException when organism (Genus,Species) is unknown
+#901 - OBO file contains different ontologies
+#869 - ERROR: function bioseg_create(integer, integer) does not exist
+#706 - Transfer sequences shouldn't query for SNPs
+#187 - Format decimal places better
+
+InterMine 1.4.1
+
+#922 - List upload: exception thrown when it can't find default organism
+
+InterMine 1.4 (Xmas 2014)
+
+#848 - Report page: templates expanded by default
+#841 - List upload fails in metabolicMine
+#837 - keyword search results: now limited to 100 items
+#832 - Build failing on wrong classes
+#830 - Throw exception with helpful error message on finding ontology term without a name
+#829 - BioPAX file name change
+#827 - Hikari docs
+#811 - "No simple name for class" error
+#809 - BioGRID: append MGI prefix
+#800 - Angle bracket issue in column summary dialog
+#786 - Query with outer join does not validate
+#782 - Entrez gene resolver changed MGI ID format, ID resolver failing
+#781 - Publications: Process consortiums as authors correctly.
+#777 - List conversion - config ignored, all fields displayed
+#772 - Friendly mines repeating
+#765 - list upload: cannot create a list of authors, for example
+#752 - Change model to be SequenceFeature.homologue instead of Gene.homologue
+#742 - FlyMine: Panther human homologues didn't merge
+#728 - GenomicRegionSequence web service missing
+#727 - Webapp - Users can't login or create lists
+#721 - Allow adding of collections to top summary section of report
+#720 - Collections don't appear in summary section when tagged
+#718 - Use Postgres built-in ranges as an alternative to BioSeg
+#716 - Biopax data download - script broken
+#714 - PrecomputedTableManager fails with SimpleObjects
+#712 - Prevent precomputed tables being generated unneccesarily
+#696 - Add identifier to widget download
+#686 - Portal - add optional organism constraint
+#681 - Error with Java 8
+#676 - Duplicate queries being run with LOOKUP constraints and wildcards
+#664 - auto-generated python code from List analysis page when logged in
+#653 - Error precomputing objectstore queries containing COUNT(*)
+#648 - Write parser for GVF files
+#635 - List Analysis -> any table/GO widget -> View -> 'Create list'
+#632 - Adding X basepairs as extension when downloading FASTA throws an exception
+#631 - Remove modmine from core code
+#626 - Results tables - Integer values appear in results table but not in summary popup
+#625 - choosing either ruby or python in the API tag logs an error
+#618 - Selenium - automated browser tests
+#617 - URL for docs is wrong in generated code
+#614 - Report page - if bad ID don't throw exception
+#604 - Move model out of OS package
+#603 - Keyword search - memory not freed when removing webapp
+#584 - Generated JSON omitting optional constraints
+#580 - make sure users don't need our CDN
+#575 - Export to galaxy fails
+#574 - Galaxy export failing
+#570 - Keyword search - select all checkbox doesn't work
+#568 - Precompute fails with outer joins
+#567 - Update to new file format - FlyBase expression
+#558 - Update connection pool library
+#538 - icons on results not working in firefox / IE 11
+#529 - Label decoration of faceItem.value in keywordSearchResults.jsp
+#516 - JMOL displayer not working
+#517 - Improve Lucene search
+#504 - results tables: Item check boxes not updated correctly
+#470 - OAuth2 authentication
+#465 - Use equals instead of LIKE when user has selected EQUALS
+#452 - LOOKUP query with wildcard is slow
+#415 - Too many segments in a range query kills the webapp
+#273 - Some Permalinks are only temporary
+#54 - Query for empty collections / references
+
+1.3.10
+
+#740 - dataCategories.jsp missing tag library includes
+
+1.3.9
+
+#756 - Fix GFF3 export in region search.
+
+1.3.8
+
+#692 - Parse the UniProt config correctly.
+
+1.3.7
+
+#665 - Fix for python code generator. Now produces code for logged in users which is actually correct.
+
+1.3.6
+
+#593 - If you have a local CDN, this will make sure your CDN is correct in generated JavaScript code.
+
+1.3.5
+
+#633 - GFF3Converter can skip (exclude) a defined list of GFF3 terms. Thanks to @vivekkrish!
+
+1.3.4
+
+#446 - The Interaction Widget download only captured the first 50 rows instead of the full result set.
+
+1.3.3
+
+#584 - Generated JSON omitting optional constraints
+
+1.3.2
+
+#607 - Added the ability to generate configuration for JBrowse
+
+1.3.1
+
+#172 - Error when middle click on 'Show Results'
+#370 - Add HTTP api docs for the bio web services
+#383 - Warning messages keep popping up when navigating between lists
+#407 - Favicons for mines - flymine, modmine, intermine
+#446 - Interaction Widget download only capturing 50 rows
+#456 - we should serve subfeatures in our jbrowse output.
+#463 - Add InterMine Query Tool
+#473 - MouseMine - synonyms not being indexed correctly
+#503 - Add janitor thread to id resolution servlet
+#515 - UniProt keywords: multi-line text loses whitespace
+#524 - list enrichment web service xml output
+#526 - web service documentation
+#528 - Keyword search iodocs - add facet and 100 limit
+#529 - Add path formatter to keyword search facets, as per @hkmoon
+#530 - unmatched </div> in dataCategories.jsp
+#535 - keyword search with quotes
+#536 - uniprot features location
+#537 - pop-up info box on mouse-over in results table..
+#539 - web service (perl): "XML is not well formatted" error if field names have underscore [_] 
+#540 - list-widgets normalise by length does not work anymore
+#543 - Add List DELETE to web.xml
+#545 - Error on home page related to lists
+#549 - Panther - update to allow for new codes
+#550 - Webapp failing regularly
+#555 - Exception when running query using Java client library
+#560 - Update links on docs
+#570 - Keyword search - select all checkbox doesn't work
+#573 - Breadcrumbs don't make sense
+
+1.3 (Xmas 2013)
+
+#7 - Keyword search - organism facet should be on parent class
+#64 - Jumpy display: new table controls on report pages
+#66 - Autocomplete displays underneath autocomplete suggested by browser
+#70 - Result Table popups extend beyond visible area
+#151 - Use "list" instead of "bag". 
+#155 - beta - missing error msg "Your query would take too long"
+#157 - UTF characters in imjs
+#158 - im-tables css has rules for svg elements that are too broad
+#163 - Column headers not displayed
+#165 - Autocomplete broken in "Add new filter" dialog
+#166 - Sort order drag-n-drop bug.
+#184 - Error messages on results tables when user clicks before page loads.
+#194 - Webapp: Oops! - Server Error
+#197 - Results Table Gene Link open in a new window
+#207 - Save button not working following Get XML code
+#214 - Uploading lists - type issue
+#215 - Query results: fixed width columns hide data
+#218 - Export collection attributes to GFF/FASTA
+#223 - UniProt Parser Suggestion
+#224 - Results tables not appearing on IE 8
+#228 - Query too long to run warning
+#239 - Update the JS code generator
+#272 - new Pathway Tool
+#285 - Export is failing when removing columns
+#314 - Add "getting started" tutorial for webapp config
+#355 - Enable hiding specific fields from querybuilder
+#381 - Templates on home page are owned by the superuser only
+#382 - LOOKUP for protein ignores organism name
+#383 - Warning messages keep popping up when navigating between lists
+#392 - ConcurrentModificationException when adding to a list.
+#399 - YeastMine - external link icon is wrong
+#400 - Better UI for list upload resolve identifiers step (+ #489, #494, #497, #505)
+#424 - Removing particular columns from templates results in Oops!
+#431 - Show templates in summary section of report page
+#432 - AnnotationExtension should be in evidence
+#438 - GFF3 Download fails on non sequence features - should be disabled
+#442 - Download dialogue - suggestions
+#444 - Query results - need dropdowns when adding filters
+#445 - Code generation - don't use ID. never ever!
+#449 - Quick search results only retrieving first 100 rows
+#450 - Report page - results tables are being added to the query history
+#451 - Autocomplete not scrolling all the way
+#453 - ID Resolution WS update
+#454 - Update sequence feature displayer
+#461 - 500 error code response with empty query constraints.
+#469 - Homologene - correct identifiers
+#471 - Dead link to Reactome inference details on Reports Page
+#472 - OrthoDB - add option to use protein ID field
+#479 - move new list widgets to InterMine
+#483 - $ not exported on window
+#494 - List upload - download summary requires Blobs
+#496 - InitialiserPlugin should start the upgrade procedure for the super users lists
+#497 - bagName not populating when upgrading a list, results in NullPointerException
+#500 - Code generation needs platform specific line endings
+#507 - Make sure perl client is up to speed with current webservicery
+#509 - Add data set to publication
+#510 - "Download" window UI is malformed when invoked inside Report Displayer
+#511 - doubleclicking an option on QueryBuilder type selector not worky under IE9
+
+1.2.2 (7 August 2013)
+
+#283 - Don't load MeSH terms by default when using PubMed data converter
+#372 - Add UberonTerm
+#373 - Fix query cancellation when using wild card with LOOKUP
+#390 - A tiny gap in the header of FlyMine report pages
+#405 - Fix browser detection not working with jQuery >= 1.9.1
+#409 - Remove waiting page when running queries
+#416 - Fixed screen black out when selecting 250 rows in query results
+
+1.2.1 (fixes for C. elegans meeting)
+
+#359 - Allow Inline Refs & Colls on Report pages to be displayed using Results Tables JS library
+#113 - NULL URLs not handled
+#138 - Scroll to top after list creation on List Analysis page
+#192 - Links to external sites should always open in a new window enhancement please-test
+#213 - Do not get actual count of matches on identifier resolution page
+#279 - Updated jQuery UI to be compatible with newer jQuery
+#289 - Results table column summary fails to display when toggling between them 
+#292 - missing icon font stylesheet for Results Tables on Report pages
+#293 - network viewer toggle not working (flymine) 
+#294 - expression graph is blue in flymine
+#299 - remove publication displayer
+#306 - ref #279
+#307 - ref #279
+#309 - Enable working FASTA exporter
+#312 - Upgraded Backbone.js
+#313 - YeastMine GFF3 and FASTA not working
+#315 - Friendly mine links to mousemine fail
+#317 - icons on results table not showing up
+#318 - Creating lists with invidual objects doesn't work anymore 
+#319 - Downloading query XML generates an error 
+#320 - tables struggle with outerjoined queries and counts
+#321 - Reordering columns in download doesn't work
+#325 - Summary incorrect on numerical column 
+#326 - Export dialogue is purple in wormmine
+#327 - Can't filter on organism name in query results 
+#328 - Can't delete tags
+#329 - Do nothing if nothing is entered in search boxes on Home page
+#330 - p-values greater than 1 when adjusting for gene length 
+#331 - can't download GO widget data in Safari 
+#334 - Add filter button broken 
+#335 - Submit event not suppressed in dropdown summary form bug please-test
+#336 - "Max value" ignored when correcting by gene length 
+#337 - Correct query not being generated when using portal
+#340 - PathQuery#verifyQuery() returns incorrect status with many OJs
+#341 - Make homepage boxes work with any length of text
+#343 - Homepage boxes use CSS3 not background images
+#347 - opening a Results Table from List Widget should preserve a Query back link or hide it
+#348 - Results tables dropdown menus theme colors
+#350 - Use debug mode in List Widgets
+#351 - Cross references not linking out automatically
+#352 - Use labels in keyword search results 
+#354 - Cell formatters - make optional
+#356 - Fix Results Tables not opening from List Widgets in Firefox
+#357 - Color for MouseMine links
+#363 - Fix List Widgets failing with expecting JSONP by asking for JSON
+#367 - Limited space when renaming lists
+#368 - Inheritance not being handled correctly for list widgets 
+#371 - multiple formatters per class, based on path 
+#378 - Show a button instead of a checkbox in List Widgets cull by gene length
+#384 - Select all items in a widget list if none are selected
+
+1.2 (27 March 2013)
+
+#  9 - Import templates/queries from file
+# 44 - Special characters escaped correctly
+# 45 - List operations: asymmetric difference 
+# 93 - Keyword search: redirects work as expected
+# 95 - Can create outer joins in 'summary' views in the query builder
+#137 - Enrichment widgets: added option to 'normalize by gene length' 
+#152 - Data source ontology
+#173 - Keyword search: can create a list with over 100 members
+#176 - Convert links on list analysis working
+#179 - 'make_source' script creates all needed directories
+#181 - Templates handling inheritance correctly now
+#190 - Default fields displayed on list analysis page now include references
+#196 - Template form: hide complicated logic from user
+#233 - Transfer-sequences postprocess correctly creating sequences for CDSs and transcripts
+#234 - Link in enrichment widgets displays identifier instead of [link], as before
+#236 - Graph widgets: clicking on expected bar is disabled

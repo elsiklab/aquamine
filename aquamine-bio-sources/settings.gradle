@@ -1,0 +1,33 @@
+rootProject.name = 'bio-sources'
+include ':bio-source-evidence-ontology'
+project(':bio-source-evidence-ontology').projectDir = new File(settingsDir, './evidence-ontology')
+include ':bio-source-fasta-assembly'
+project(':bio-source-fasta-assembly').projectDir = new File(settingsDir, './fasta-assembly')
+include ':bio-source-refseq-gff'
+project(':bio-source-refseq-gff').projectDir = new File(settingsDir, './refseq-gff')
+include ':bio-source-ensembl-gff'
+project(':bio-source-ensembl-gff').projectDir = new File(settingsDir, './ensembl-gff')
+include ':bio-source-pseudogene-refseq-gff'
+project(':bio-source-pseudogene-refseq-gff').projectDir = new File(settingsDir, './pseudogene-refseq-gff')
+include ':bio-source-pseudogene-ensembl-gff'
+project(':bio-source-pseudogene-ensembl-gff').projectDir = new File(settingsDir, './pseudogene-ensembl-gff')
+include ':bio-source-pseudogene-refseq-nottranscribed-gff'
+project(':bio-source-pseudogene-refseq-nottranscribed-gff').projectDir = new File(settingsDir, './pseudogene-refseq-nottranscribed-gff')
+include ':bio-source-custom-gene-info'
+project(':bio-source-custom-gene-info').projectDir = new File(settingsDir, './custom-gene-info')
+include ':bio-source-kegg-pathway-url'
+project(':bio-source-kegg-pathway-url').projectDir = new File(settingsDir, './kegg-pathway-url')
+include ':bio-source-cross-references'
+project(':bio-source-cross-references').projectDir = new File(settingsDir, './cross-references')
+include ':bio-source-pubmed-gene-source'
+project(':bio-source-pubmed-gene-source').projectDir = new File(settingsDir, './pubmed-gene-source')
+include ':bio-source-uniprot-evidence'
+project(':bio-source-uniprot-evidence').projectDir = new File(settingsDir, './uniprot-evidence')
+include ':bio-source-orthodb-clusters'
+project(':bio-source-orthodb-clusters').projectDir = new File(settingsDir, './orthodb-clusters')
+include ':bio-source-ensembl-compara-custom'
+project(':bio-source-ensembl-compara-custom').projectDir = new File(settingsDir, './ensembl-compara-custom')
+include ':bio-source-update-publications-key'
+project(':bio-source-update-publications-key').projectDir = new File(settingsDir, './update-publications-key')
+include ':bio-source-entrez-organism-key'
+project(':bio-source-entrez-organism-key').projectDir = new File(settingsDir, './entrez-organism-key')

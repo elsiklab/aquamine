@@ -1,0 +1,4 @@
+rootProject.name = 'bio-postprocess'
+
+include ':bio-postprocess-transfer-sequences-cds'
+project(':bio-postprocess-transfer-sequences-cds').projectDir = new File(settingsDir, './transfer-sequences-cds')

@@ -1,0 +1,2638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project type="bio">
+  <property name="target.model" value="genomic"/>
+  <property name="common.os.prefix" value="common"/>
+  <property name="intermine.properties.file" value="aquamine.properties"/>
+  <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
+
+  <sources>
+
+    <!--Ontologies-->
+
+    <source name="so" type="so" version="5.0.6">
+      <property name="src.data.file" location="so.obo"/>
+      <property name="licence" value="https://creativecommons.org/licenses/by/4.0/"/>
+    </source>
+    <source name="go" type="go" version="5.0.6">
+      <property name="src.data.file" location="/db/aquamine_v1.1/datasets/ontologies/GO/go.obo"/>
+      <property name="createrelations" value="true"/>
+      <property name="licence" value="https://creativecommons.org/licenses/by/4.0/"/>
+    </source>
+    <source name="evidence-ontology" type="evidence-ontology" version="5.0.6">
+      <property name="src.data.file" location="/db/aquamine_v1.1/datasets/ontologies/ECO/eco.obo"/>
+    </source>
+
+
+    <!--Genome Fasta-->
+
+    <!--Mexican blind cavefish aka Mexican tetra-->
+    <source name="amex-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7994"/>
+      <property name="fasta-assembly.dataSourceName" value="Astyanax mexicanus Genome GCF_000372685.2_Astyanax_mexicanus-2.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Astyanax mexicanus Genome Astyanax_mexicanus-2.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/astyanax_mexicanus/Astyanax_mexicanus-2.0"/>
+    </source>
+    <!--Atlantic herring-->
+    <source name="char-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7950"/>
+      <property name="fasta-assembly.dataSourceName" value="Clupea harengus GCF_900700415.2_Ch_v2.0.2"/>
+      <property name="fasta-assembly.dataSetTitle" value="Clupea harengus Genome Ch_v2.0.2"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Ch_v2.0.2"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/clupea_harengus/Ch_v2.0.2"/>
+    </source>
+    <!--Pacific oyster-->
+    <source name="cgig-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="29159"/>
+      <property name="fasta-assembly.dataSourceName" value="Crassostrea gigas Genome GCF_902806645.1_cgigas_uk_roslin_v1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea gigas Genome cgigas_uk_roslin_v1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="cgigas_uk_roslin_v1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/crassostrea_gigas/cgigas_uk_roslin_v1"/>
+    </source>
+    <!--Eastern oyster-->
+    <source name="cvir-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6565"/>
+      <property name="fasta-assembly.dataSourceName" value="Crassostrea virginica Genome GCF_002022765.2_C_virginica-3.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea virginica Genome C_virginica-3.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="C_virginica-3.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/crassostrea_virginica/C_virginica-3.0"/>
+    </source>
+    <!--Northern pike-->
+    <source name="eluc-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8010"/>
+      <property name="fasta-assembly.dataSourceName" value="Esox lucius GCF_004634155.1_Eluc_v4"/>
+      <property name="fasta-assembly.dataSetTitle" value="Esox lucius Genome Eluc_v4"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Eluc_v4"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/esox_lucius/Eluc_v4"/>
+    </source>
+    <!--Atlantic cod-->
+    <source name="gmor-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8049"/>
+      <property name="fasta-assembly.dataSourceName" value="Gadus morhua GCF_902167405.1_gadMor3.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gadus morhua Genome gadMor3.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="gadMor3.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/gadus_morhua/gadMor3.0"/>
+    </source>
+    <!--Three-spined stickleback-->
+    <source name="gacu-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="481459"/>
+      <property name="fasta-assembly.dataSourceName" value="Gasterosteus aculeatus aculeatus GCF_016920845.1_GAculeatus_UGA_version5"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gasterosteus aculeatus aculeatus Genome GAculeatus_UGA_version5"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="GAculeatus_UGA_version5"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5"/>
+    </source>
+    <!--Atlantic halibut-->
+    <source name="hhip-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8267"/>
+      <property name="fasta-assembly.dataSourceName" value="Hippoglossus hippoglossus Genome GCF_009819705.1_fHipHip1.pri"/>
+      <property name="fasta-assembly.dataSetTitle" value="Hippoglossus hippoglossus Genome fHipHip1.pri"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="fHipHip1.pri"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/hippoglossus_hippoglossus/fHipHip1.pri"/>
+    </source>
+    <!--American lobster-->
+    <source name="hame-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6706"/>
+      <property name="fasta-assembly.dataSourceName" value="Homarus americanus Genome GCF_018991925.1_GMGI_Hamer_2.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homarus americanus Genome GMGI_Hamer_2.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="GMGI_Hamer_2.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/homarus_americanus/GMGI_Hamer_2.0"/>
+    </source>
+    <!--Channel catfish-->
+    <source name="ipun-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7998"/>
+      <property name="fasta-assembly.dataSourceName" value="Ictalurus punctatus Genome GCF_001660625.1_IpCoco_1.2"/>
+      <property name="fasta-assembly.dataSetTitle" value="Ictalurus punctatus Genome IpCoco_1.2"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="IpCoco_1.2"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/ictalurus_punctatus/IpCoco_1.2"/>
+    </source>
+    <!--Northern quahog-->
+    <source name="mmer-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6596"/>
+      <property name="fasta-assembly.dataSourceName" value="Mercenaria mercenaria Genome GCF_014805675.1_ASM1480567v1.1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Mercenaria mercenaria Genome ASM1480567v1.1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="ASM1480567v1.1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/mercenaria_mercenaria/ASM1480567v1.1"/>
+    </source>
+    <!--Largemouth bass-->
+    <source name="msal-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="27706"/>
+      <property name="fasta-assembly.dataSourceName" value="Micropterus salmoides Genome GCF_014851395.1_ASM1485139v1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Micropterus salmoides Genome ASM1485139v1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="ASM1485139v1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/micropterus_salmoides/ASM1485139v1"/>
+    </source>
+    <!--Striped sea bass-->
+    <source name="msax-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="34816"/>
+      <property name="fasta-assembly.dataSourceName" value="Morone saxatilis Genome GCF_004916995.1_NCSU_SB_2.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Morone saxatilis Genome NCSU_SB_2.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="NCSU_SB_2.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/morone_saxatilis/NCSU_SB_2.0"/>
+    </source>
+    <!--Coho salmon-->
+    <source name="okis-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8019"/>
+      <property name="fasta-assembly.dataSourceName" value="Oncorhynchus kisutch Genome GCF_002021735.2_Okis_V2"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus kisutch Genome Okis_V2"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Okis_V2"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/oncorhynchus_kisutch/Okis_V2"/>
+    </source>
+    <!--Rainbow trout-->
+    <source name="omyk-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8022"/>
+      <property name="fasta-assembly.dataSourceName" value="Oncorhynchus mykiss Genome GCF_013265735.2_USDA_OmykA_1.1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus mykiss Genome USDA_OmyKA_1.1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/oncorhynchus_mykiss/USDA_OmyKA_1.1"/>
+    </source>
+    <!--Sockeye salmon-->
+    <source name="oner-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8023"/>
+      <property name="fasta-assembly.dataSourceName" value="Oncorhynchus nerka Genome GCF_006149115.1_Oner_1.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus nerka Genome Oner_1.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Oner_1.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/oncorhynchus_nerka/Oner_1.0"/>
+    </source>
+    <!--Chinook salmon-->
+    <source name="otsh-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="74940"/>
+      <property name="fasta-assembly.dataSourceName" value="Oncorhynchus tshawytscha Genome GCF_018296145.1_Otsh_v2.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus tshawytscha Genome Otsh_v2.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Otsh_v2.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/oncorhynchus_tshawytscha/Otsh_v2.0"/>
+    </source>
+    <!--Nile tilapia-->
+    <source name="onil-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8128"/>
+      <property name="fasta-assembly.dataSourceName" value="Oreochromis niloticus Genome GCF_00185.0.6.2_O_niloticus_UMD_NMBU"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oreochromis niloticus Genome O_niloticus_UMD_NMBU"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/oreochromis_niloticus/O_niloticus_UMD_NMBU"/>
+    </source>
+    <!--Giant tiger prawn-->
+    <source name="pmon-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6687"/>
+      <property name="fasta-assembly.dataSourceName" value="Penaeus monodon Genome GCF_015228065.1_NSTDA_Pmon_1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus monodon Genome NSTDA_Pmon_1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="NSTDA_Pmon_1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/penaeus_monodon/NSTDA_Pmon_1"/>
+    </source>
+    <!--Pacific white shrimp-->
+    <source name="pvan-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6689"/>
+      <property name="fasta-assembly.dataSourceName" value="Penaeus vannamei Genome GCF_003789085.1_ASM378908v1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus vannamei Genome ASM378908v1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="ASM378908v1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/penaeus_vannamei/ASM378908v1"/>
+    </source>
+    <!--Yellow perch-->
+    <source name="pfla-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8167"/>
+      <property name="fasta-assembly.dataSourceName" value="Perca flavescens Genome GCF_004354835.1_PFLA_1.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Perca flavescens Genome PFLA_1.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="PFLA_1.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/perca_flavescens/PFLA_1.0"/>
+    </source>
+    <!--Atlantic salmon (updated assembly)-->
+    <source name="ssal-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8030"/>
+      <property name="fasta-assembly.dataSourceName" value="Salmo salar Genome GCF_905237065.1_Ssal_v3.1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salmo salar Genome Ssal_v3.1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Ssal_v3.1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/salmo_salar/Ssal_v3.1"/>
+    </source>
+    <!--Salvelinus-->
+    <source name="salp-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="2691554"/>
+      <property name="fasta-assembly.dataSourceName" value="Salvelinus sp. IW2-2015 Genome GCF_002910315.2_ASM291031v2"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salvelinus sp. IW2-2015 Genome ASM291031v2"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="ASM291031v2"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/salvelinus_alpinus/ASM291031v2"/>
+    </source>
+    <!--Greater amberjack-->
+    <source name="sdum-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="41447"/>
+      <property name="fasta-assembly.dataSourceName" value="Seriola dumerili Genome GCF_002260705.1_Sdu_1.0"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola dumerili Genome Sdu_1.0"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Sdu_1.0"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/seriola_dumerili/Sdu_1.0"/>
+    </source>
+    <!--California yellowtail aka Yellowtail amberjack)-->
+    <source name="sdor-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="1841481"/>
+      <property name="fasta-assembly.dataSourceName" value="Seriola lalandi dorsalis Genome GCF_002814215.1_Sedor1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola lalandi dorsalis Genome Sedor1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="Sedor1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/seriola_lalandi_dorsalis/Sedor1"/>
+    </source>
+    <!--Swordfish-->
+    <source name="xgla-fasta" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8245"/>
+      <property name="fasta-assembly.dataSourceName" value="Xiphias gladius Genome GCF_016859285.1_ASM1685928v1"/>
+      <property name="fasta-assembly.dataSetTitle" value="Xiphias gladius Genome ASM1685928v1"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.assemblyVersion" value="ASM1685928v1"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.FastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/genome/xiphias_gladius/ASM1685928v1"/>
+    </source>
+
+
+    <!--RefSeq GFF-->
+    <!--Protein-coding and noncoding combined into one source now-->
+
+    <source name="amex-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7994"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Astyanax_mexicanus-2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/astyanax_mexicanus/Astyanax_mexicanus-2.0/genes"/>
+    </source>
+    <source name="amex-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7994"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Astyanax_mexicanus-2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/astyanax_mexicanus/Astyanax_mexicanus-2.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="amex-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7994"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Astyanax_mexicanus-2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/astyanax_mexicanus/Astyanax_mexicanus-2.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="char-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7950"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Ch_v2.0.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ch_v2.0.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/clupea_harengus/Ch_v2.0.2/genes"/>
+    </source>
+    <source name="char-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7950"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Ch_v2.0.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ch_v2.0.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/clupea_harengus/Ch_v2.0.2/pseudogenes_transcribed"/>
+    </source>
+    <source name="char-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7950"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Ch_v2.0.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ch_v2.0.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/clupea_harengus/Ch_v2.0.2/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="cgig-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="29159"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for cgigas_uk_roslin_v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="cgigas_uk_roslin_v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_gigas/cgigas_uk_roslin_v1/genes"/>
+    </source>
+    <source name="cgig-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="29159"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for cgigas_uk_roslin_v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="cgigas_uk_roslin_v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_gigas/cgigas_uk_roslin_v1/pseudogenes_transcribed"/>
+    </source>
+    <source name="cgig-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="29159"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for cgigas_uk_roslin_v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="cgigas_uk_roslin_v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_gigas/cgigas_uk_roslin_v1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="cvir-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6565"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for C_virginica-3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="C_virginica-3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_virginica/C_virginica-3.0/genes"/>
+    </source>
+    <source name="cvir-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6565"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for C_virginica-3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="C_virginica-3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_virginica/C_virginica-3.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="cvir-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6565"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for C_virginica-3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="C_virginica-3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/crassostrea_virginica/C_virginica-3.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="eluc-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8010"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Eluc_v4"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Eluc_v4"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/esox_lucius/Eluc_v4/genes"/>
+    </source>
+    <source name="eluc-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8010"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Eluc_v4"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Eluc_v4"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/esox_lucius/Eluc_v4/pseudogenes_transcribed"/>
+    </source>
+    <source name="eluc-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8010"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Eluc_v4"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Eluc_v4"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/esox_lucius/Eluc_v4/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="gmor-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8049"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for gadMor3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="gadMor3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gadus_morhua/gadMor3.0/genes"/>
+    </source>
+    <source name="gmor-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8049"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for gadMor3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="gadMor3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gadus_morhua/gadMor3.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="gmor-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8049"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for gadMor3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="gadMor3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gadus_morhua/gadMor3.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="gacu-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="481459"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for GAculeatus_UGA_version5"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GAculeatus_UGA_version5"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5/genes"/>
+    </source>
+    <source name="gacu-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="481459"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for GAculeatus_UGA_version5"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GAculeatus_UGA_version5"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5/pseudogenes_transcribed"/>
+    </source>
+    <source name="gacu-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="481459"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for GAculeatus_UGA_version5"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GAculeatus_UGA_version5"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="hhip-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8267"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for fHipHip1.pri"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="fHipHip1.pri"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/hippoglossus_hippoglossus/fHipHip1.pri/genes"/>
+    </source>
+    <source name="hhip-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8267"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for fHipHip1.pri"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="fHipHip1.pri"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/hippoglossus_hippoglossus/fHipHip1.pri/pseudogenes_transcribed"/>
+    </source>
+    <source name="hhip-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8267"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for fHipHip1.pri"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="fHipHip1.pri"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/hippoglossus_hippoglossus/fHipHip1.pri/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="hame-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for GMGI_Hamer_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GMGI_Hamer_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/homarus_americanus/GMGI_Hamer_2.0/genes"/>
+    </source>
+    <source name="hame-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for GMGI_Hamer_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GMGI_Hamer_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/homarus_americanus/GMGI_Hamer_2.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="hame-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for GMGI_Hamer_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="GMGI_Hamer_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/homarus_americanus/GMGI_Hamer_2.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="ipun-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7998"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for IpCoco_1.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="IpCoco_1.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/ictalurus_punctatus/IpCoco_1.2/genes"/>
+    </source>
+    <source name="ipun-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7998"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene set (transcribed) for IpCoco_1.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="IpCoco_1.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/ictalurus_punctatus/IpCoco_1.2/pseudogenes_transcribed"/>
+    </source>
+    <source name="ipun-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7998"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene set (not transcribed) for IpCoco_1.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="IpCoco_1.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/ictalurus_punctatus/IpCoco_1.2/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="mmer-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6596"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for ASM1480567v1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1480567v1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/mercenaria_mercenaria/ASM1480567v1.1/genes"/>
+    </source>
+    <source name="mmer-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6596"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for ASM1480567v1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1480567v1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/mercenaria_mercenaria/ASM1480567v1.1/pseudogenes_transcribed"/>
+    </source>
+    <source name="mmer-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="6596"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for ASM1480567v1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1480567v1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/mercenaria_mercenaria/ASM1480567v1.1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="msal-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="27706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for ASM1485139v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1485139v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/micropterus_salmoides/ASM1485139v1/genes"/>
+    </source>
+    <source name="msal-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="27706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for ASM1485139v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1485139v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/micropterus_salmoides/ASM1485139v1/pseudogenes_transcribed"/>
+    </source>
+    <source name="msal-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="27706"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for ASM1485139v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1485139v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/micropterus_salmoides/ASM1485139v1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="msax-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="34816"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for NCSU_SB_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NCSU_SB_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/morone_saxatilis/NCSU_SB_2.0/genes"/>
+    </source>
+    <source name="msax-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="34816"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for NCSU_SB_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NCSU_SB_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/morone_saxatilis/NCSU_SB_2.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="msax-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="34816"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for NCSU_SB_2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NCSU_SB_2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/morone_saxatilis/NCSU_SB_2.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="okis-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8019"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Okis_V2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Okis_V2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_kisutch/Okis_V2/genes"/>
+    </source>
+    <source name="okis-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8019"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Okis_V2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Okis_V2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_kisutch/Okis_V2/pseudogenes_transcribed"/>
+    </source>
+    <source name="okis-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8019"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Okis_V2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Okis_V2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_kisutch/Okis_V2/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="omyk-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8022"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for USDA_OmyKA_1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_mykiss/USDA_OmyKA_1.1/genes"/>
+    </source>
+    <source name="omyk-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8022"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for USDA_OmyKA_1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_mykiss/USDA_OmyKA_1.1/pseudogenes_transcribed"/>
+    </source>
+    <source name="omyk-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8022"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for USDA_OmyKA_1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_mykiss/USDA_OmyKA_1.1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="oner-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8023"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Oner_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Oner_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_nerka/Oner_1.0/genes"/>
+    </source>
+    <source name="oner-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8023"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Oner_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Oner_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_nerka/Oner_1.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="oner-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8023"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Oner_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Oner_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_nerka/Oner_1.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="otsh-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="74940"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Otsh_v2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Otsh_v2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_tshawytscha/Otsh_v2.0/genes"/>
+    </source>
+    <source name="otsh-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="74940"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Otsh_v2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Otsh_v2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_tshawytscha/Otsh_v2.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="otsh-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="74940"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Otsh_v2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Otsh_v2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oncorhynchus_tshawytscha/Otsh_v2.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="onil-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8128"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for O_niloticus_UMD_NMBU"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oreochromis_niloticus/O_niloticus_UMD_NMBU/genes"/>
+    </source>
+    <source name="onil-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8128"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transribed) set for O_niloticus_UMD_NMBU"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oreochromis_niloticus/O_niloticus_UMD_NMBU/pseudogenes_transcribed"/>
+    </source>
+    <source name="onil-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8128"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transribed) set for O_niloticus_UMD_NMBU"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/oreochromis_niloticus/O_niloticus_UMD_NMBU/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="pmon-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6687"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for NSTDA_Pmon_1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NSTDA_Pmon_1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_monodon/NSTDA_Pmon_1/genes"/>
+    </source>
+    <source name="pmon-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6687"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for NSTDA_Pmon_1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NSTDA_Pmon_1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_monodon/NSTDA_Pmon_1/pseudogenes_transcribed"/>
+    </source>
+    <source name="pmon-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6687"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for NSTDA_Pmon_1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="NSTDA_Pmon_1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_monodon/NSTDA_Pmon_1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="pvan-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6689"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for ASM378908v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM378908v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_vannamei/ASM378908v1/genes"/>
+    </source>
+    <source name="pvan-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6689"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for ASM378908v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM378908v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_vannamei/ASM378908v1/pseudogenes_transcribed"/>
+    </source>
+    <source name="pvan-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="6689"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for ASM378908v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM378908v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/penaeus_vannamei/ASM378908v1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="pfla-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8167"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for PFLA_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="PFLA_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/perca_flavescens/PFLA_1.0/genes"/>
+    </source>
+    <source name="pfla-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8167"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for PFLA_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="PFLA_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/perca_flavescens/PFLA_1.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="pfla-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8167"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for PFLA_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="PFLA_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/perca_flavescens/PFLA_1.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="ssal-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8030"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Ssal_v3.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ssal_v3.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salmo_salar/Ssal_v3.1/genes"/>
+    </source>
+    <source name="ssal-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8030"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Ssal_v3.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ssal_v3.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salmo_salar/Ssal_v3.1/pseudogenes_transcribed"/>
+    </source>
+    <source name="ssal-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8030"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Ssal_v3.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ssal_v3.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salmo_salar/Ssal_v3.1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="salp-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="2691554"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for ASM291031v2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM291031v2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salvelinus_alpinus/ASM291031v2/genes"/>
+    </source>
+    <source name="salp-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="2691554"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene set (transcribed) for ASM291031v2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM291031v2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salvelinus_alpinus/ASM291031v2/pseudogenes_transcribed"/>
+    </source>
+    <source name="salp-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="2691554"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene set (not transcribed) for ASM291031v2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM291031v2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/salvelinus_alpinus/ASM291031v2/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="sdum-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="41447"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Sdu_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sdu_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_dumerili/Sdu_1.0/genes"/>
+    </source>
+    <source name="sdum-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="41447"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Sdu_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sdu_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_dumerili/Sdu_1.0/pseudogenes_transcribed"/>
+    </source>
+    <source name="sdum-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="41447"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Sdu_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sdu_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_dumerili/Sdu_1.0/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="sdor-refseq-gff" type="refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="1841481"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for Sedor1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sedor1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_lalandi_dorsalis/Sedor1/genes"/>
+    </source>
+    <source name="sdor-pseudogene-refseq-gff" type="pseudogene-refseq-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="1841481"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for Sedor1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sedor1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_lalandi_dorsalis/Sedor1/pseudogenes_transcribed"/>
+    </source>
+    <source name="sdor-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="1841481"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for Sedor1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sedor1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/seriola_lalandi_dorsalis/Sedor1/pseudogenes_nottranscribed"/>
+    </source>
+    <source name="xgla-refseq-gff" type="refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8245"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq gene set for ASM1685928v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1685928v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/xiphias_gladius/ASM1685928v1/genes"/>
+    </source>
+    <source name="xgla-pseudogene-refseq-gff" type="pseudogene-refseq-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8245"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (transcribed) set for ASM1685928v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1685928v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/xiphias_gladius/ASM1685928v1/pseudogenes_transcribed"/>
+    </source>
+    <source name="xgla-pseudogene-refseq-nottranscribed-gff" type="pseudogene-refseq-nottranscribed-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8245"/>
+      <property name="gff3.dataSourceName" value="RefSeq"/>
+      <property name="gff3.dataSetTitle" value="NCBI RefSeq pseudogene (not transcribed) set for ASM1685928v1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="ASM1685928v1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/annotations/xiphias_gladius/ASM1685928v1/pseudogenes_nottranscribed"/>
+    </source>
+
+
+    <!--Ensembl GFF-->
+
+    <source name="amex-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7994"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Astyanax_mexicanus-2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/astyanax_mexicanus/Astyanax_mexicanus-2.0/genes"/>
+    </source>
+    <source name="amex-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7994"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Astyanax_mexicanus-2.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Astyanax_mexicanus-2.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/astyanax_mexicanus/Astyanax_mexicanus-2.0/pseudogenes"/>
+    </source>
+    <source name="char-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7950"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Ch_v2.0.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ch_v2.0.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/clupea_harengus/Ch_v2.0.2/genes"/>
+    </source>
+    <source name="char-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7950"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Ch_v2.0.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ch_v2.0.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/clupea_harengus/Ch_v2.0.2/pseudogenes"/>
+    </source>
+    <source name="eluc-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8010"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Eluc_v4"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Eluc_v4"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/esox_lucius/Eluc_v4/genes"/>
+    </source>
+    <source name="eluc-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8010"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Eluc_v4"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Eluc_v4"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/esox_lucius/Eluc_v4/pseudogenes"/>
+    </source>
+    <source name="gmor-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8049"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for gadMor3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="gadMor3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/gadus_morhua/gadMor3.0/genes"/>
+    </source>
+    <source name="gmor-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8049"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for gadMor3.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="gadMor3.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/gadus_morhua/gadMor3.0/pseudogenes"/>
+    </source>
+    <source name="hhip-ensembl-gff" type="ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8267"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for fHipHip1.pri"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="fHipHip1.pri"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/hippoglossus_hippoglossus/fHipHip1.pri/genes"/>
+    </source>
+    <source name="hhip-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8267"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for fHipHip1.pri"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="fHipHip1.pri"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/hippoglossus_hippoglossus/fHipHip1.pri/pseudogenes"/>
+    </source>
+    <source name="ipun-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7998"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for IpCoco_1.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="IpCoco_1.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/ictalurus_punctatus/IpCoco_1.2/genes"/>
+    </source>
+    <source name="ipun-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="7998"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for IpCoco_1.2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="IpCoco_1.2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/ictalurus_punctatus/IpCoco_1.2/pseudogenes"/>
+    </source>
+    <source name="okis-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8019"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Okis_V2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Okis_V2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_kisutch/Okis_V2/genes"/>
+    </source>
+    <source name="okis-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8019"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Okis_V2"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Okis_V2"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_kisutch/Okis_V2/pseudogenes"/>
+    </source>
+    <source name="omyk-ensembl-gff" type="ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8022"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for USDA_OmyKA_1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_mykiss/USDA_OmyKA_1.1/genes"/>
+    </source>
+    <source name="omyk-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8022"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for USDA_OmyKA_1.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="USDA_OmyKA_1.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_mykiss/USDA_OmyKA_1.1/pseudogenes"/>
+    </source>
+    <source name="oner-ensembl-gff" type="ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8023"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Oner_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Oner_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_nerka/Oner_1.0/genes"/>
+    </source>
+    <source name="oner-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff" version="5.0.6">
+      <property name="gff3.taxonId" value="8023"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Oner_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Oner_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oncorhynchus_nerka/Oner_1.0/pseudogenes"/>
+    </source>
+    <source name="onil-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8128"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for O_niloticus_UMD_NMBU"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oreochromis_niloticus/O_niloticus_UMD_NMBU/genes"/>
+    </source>
+    <source name="onil-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8128"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for O_niloticus_UMD_NMBU"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="O_niloticus_UMD_NMBU"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/oreochromis_niloticus/O_niloticus_UMD_NMBU/pseudogenes"/>
+    </source>
+    <source name="ssal-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8030"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Ssal_v3.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ssal_v3.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/salmo_salar/Ssal_v3.1/genes"/>
+    </source>
+    <source name="ssal-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="8030"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Ssal_v3.1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Ssal_v3.1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/salmo_salar/Ssal_v3.1/pseudogenes"/>
+    </source>
+    <source name="sdum-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="41447"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Sdu_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sdu_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/seriola_dumerili/Sdu_1.0/genes"/>
+    </source>
+    <source name="sdum-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="41447"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Sdu_1.0"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sdu_1.0"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/seriola_dumerili/Sdu_1.0/pseudogenes"/>
+    </source>
+    <source name="sdor-ensembl-gff" type="ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="1841481"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl gene set for Sedor1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sedor1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/seriola_lalandi_dorsalis/Sedor1/genes"/>
+    </source>
+    <source name="sdor-pseudogene-ensembl-gff" type="pseudogene-ensembl-gff"  version="5.0.6">
+      <property name="gff3.taxonId" value="1841481"/>
+      <property name="gff3.dataSourceName" value="Ensembl"/>
+      <property name="gff3.dataSetTitle" value="Ensembl pseudogene set for Sedor1"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.seqAssemblyVersion" value="Sedor1"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/annotations/seriola_lalandi_dorsalis/Sedor1/pseudogenes"/>
+    </source>
+
+
+    <!--Custom Gene Info (reference species)-->
+    <!--Load directly after other GFF-->
+    <!--New: get Organism taxon ID, DataSet title, and DataSource name from project.xml-->
+
+    <!--RefSeq-->
+    <source name="dmel-gene-info-refseq" type="custom-gene-info">
+      <property name="taxonId" value="7227"/>
+      <property name="dataSourceName" value="RefSeq"/>
+      <property name="dataSetTitle" value="NCBI RefSeq genes for Drosophila melanogaster"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/RefSeq/drosophila_melanogaster"/>
+      <property name="geneSource" value="RefSeq"/>
+    </source>
+    <source name="hsap-gene-info-refseq" type="custom-gene-info">
+      <property name="taxonId" value="9606"/>
+      <property name="dataSourceName" value="RefSeq"/>
+      <property name="dataSetTitle" value="NCBI RefSeq genes for Homo sapiens"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/RefSeq/homo_sapiens"/>
+      <property name="geneSource" value="RefSeq"/>
+    </source>
+    <source name="lgig-gene-info-refseq" type="custom-gene-info">
+      <property name="taxonId" value="225164"/>
+      <property name="dataSourceName" value="RefSeq"/>
+      <property name="dataSetTitle" value="NCBI RefSeq genes for Lottia gigantea"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/RefSeq/lottia_gigantea"/>
+      <property name="geneSource" value="RefSeq"/>
+    </source>
+    <source name="drer-gene-info-refseq" type="custom-gene-info">
+      <property name="taxonId" value="7955"/>
+      <property name="dataSourceName" value="RefSeq"/>
+      <property name="dataSetTitle" value="NCBI RefSeq genes for Danio rerio"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/RefSeq/danio_rerio"/>
+      <property name="geneSource" value="RefSeq"/>
+    </source>
+
+    <!--Ensembl-->
+    <source name="dmel-gene-info-ensembl" type="custom-gene-info">
+      <property name="taxonId" value="7227"/>
+      <property name="dataSourceName" value="Ensembl"/>
+      <property name="dataSetTitle" value="Ensembl genes for Drosophila melanogaster"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/Ensembl/drosophila_melanogaster"/>
+      <property name="geneSource" value="Ensembl"/>
+    </source>
+    <source name="hsap-gene-info-ensembl" type="custom-gene-info">
+      <property name="taxonId" value="9606"/>
+      <property name="dataSourceName" value="Ensembl"/>
+      <property name="dataSetTitle" value="Ensembl genes for Homo sapiens"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/Ensembl/homo_sapiens"/>
+      <property name="geneSource" value="Ensembl"/>
+    </source>
+    <source name="lgig-gene-info-ensembl" type="custom-gene-info">
+      <property name="taxonId" value="225164"/>
+      <property name="dataSourceName" value="Ensembl"/>
+      <property name="dataSetTitle" value="Ensembl genes for Lottia gigantea"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/Ensembl/lottia_gigantea"/>
+      <property name="geneSource" value="Ensembl"/>
+    </source>
+    <source name="drer-gene-info-ensembl" type="custom-gene-info">
+      <property name="taxonId" value="7955"/>
+      <property name="dataSourceName" value="Ensembl"/>
+      <property name="dataSetTitle" value="Ensembl genes for Danio rerio"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/custom-gene-info/Ensembl/danio_rerio"/>
+      <property name="geneSource" value="Ensembl"/>
+    </source>
+
+
+    <!--RefSeq CDS and Protein Fasta-->
+
+    <source name="amex-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7994"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Astyanax mexicanus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/astyanax_mexicanus/Astyanax_mexicanus-2.0"/>
+    </source>
+    <source name="amex-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7994"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Astyanax mexicanus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/astyanax_mexicanus/Astyanax_mexicanus-2.0"/>
+    </source>
+    <source name="char-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7950"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Clupea harengus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/clupea_harengus/Ch_v2.0.2"/>
+    </source>
+    <source name="char-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7950"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Clupea harengus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/clupea_harengus/Ch_v2.0.2"/>
+    </source>
+    <source name="cgig-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="29159"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea gigas RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/crassostrea_gigas/cgigas_uk_roslin_v1"/>
+    </source>
+    <source name="cgig-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="29159"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea gigas RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/crassostrea_gigas/cgigas_uk_roslin_v1"/>
+    </source>
+    <source name="cvir-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6565"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea virginica RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/crassostrea_virginica/C_virginica-3.0"/>
+    </source>
+    <source name="cvir-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6565"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Crassostrea virginica RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/crassostrea_virginica/C_virginica-3.0"/>
+    </source>
+    <source name="drer-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7955"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Danio rerio RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/danio_rerio/GRCz11"/>
+    </source>
+    <source name="drer-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7955"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Danio rerio RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/danio_rerio/GRCz11"/>
+    </source>
+    <source name="dmel-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7227"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Drosophila melanogaster RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/drosophila_melanogaster/Release_6_plus_ISO1_MT"/>
+    </source>
+    <source name="dmel-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7227"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Drosophila melanogaster RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/drosophila_melanogaster/Release_6_plus_ISO1_MT"/>
+    </source>
+    <source name="eluc-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8010"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Esox lucius RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/esox_lucius/Eluc_v4"/>
+    </source>
+    <source name="eluc-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8010"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Esox lucius RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/esox_lucius/Eluc_v4"/>
+    </source>
+    <source name="gmor-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8049"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gadus morhua RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/gadus_morhua/gadMor3.0"/>
+    </source>
+    <source name="gmor-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8049"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gadus morhua RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/gadus_morhua/gadMor3.0"/>
+    </source>
+    <source name="gacu-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="481459"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gasterosteus aculeatus aculeatus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5"/>
+    </source>
+    <source name="gacu-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="481459"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gasterosteus aculeatus aculeatus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/gasterosteus_aculeatus_aculeatus/GAculeatus_UGA_version5"/>
+    </source>
+    <source name="hhip-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8267"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Hippoglossus hippoglossus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/hippoglossus_hippoglossus/fHipHip1.pri"/>
+    </source>
+    <source name="hhip-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8267"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Hippoglossus hippoglossus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/hippoglossus_hippoglossus/fHipHip1.pri"/>
+    </source>
+    <source name="hame-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6706"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homarus americanus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/homarus_americanus/GMGI_Hamer_2.0"/>
+    </source>
+    <source name="hame-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6706"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homarus americanus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/homarus_americanus/GMGI_Hamer_2.0"/>
+    </source>
+    <source name="hsap-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="9606"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homo sapiens RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/homo_sapiens/GRCh38.p13"/>
+    </source>
+    <source name="hsap-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="9606"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homo sapiens RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/homo_sapiens/GRCh38.p13"/>
+    </source>
+    <source name="ipun-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7998"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Ictalurus punctatus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/ictalurus_punctatus/IpCoco_1.2"/>
+    </source>
+    <source name="ipun-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7998"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Ictalurus punctatus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/ictalurus_punctatus/IpCoco_1.2"/>
+    </source>
+    <source name="lgig-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="225164"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Lottia gigantea RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/lottia_gigantea/Helro1"/>
+    </source>
+    <source name="lgig-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="225164"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Lottia gigantea RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/lottia_gigantea/Helro1"/>
+    </source>
+    <source name="mmer-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6596"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Mercenaria mercenaria RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/mercenaria_mercenaria/ASM1480567v1.1"/>
+    </source>
+    <source name="mmer-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6596"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Mercenaria mercenaria RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/mercenaria_mercenaria/ASM1480567v1.1"/>
+    </source>
+    <source name="msal-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="27706"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Micropterus salmoides RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/micropterus_salmoides/ASM1485139v1"/>
+    </source>
+    <source name="msal-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="27706"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Micropterus salmoides RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/micropterus_salmoides/ASM1485139v1"/>
+    </source>
+    <source name="msax-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="34816"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Morone saxatilis RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/morone_saxatilis/NCSU_SB_2.0"/>
+    </source>
+    <source name="msax-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="34816"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Morone saxatilis RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/morone_saxatilis/NCSU_SB_2.0"/>
+    </source>
+    <source name="okis-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8019"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus kisutch RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/oncorhynchus_kisutch/Okis_V2"/>
+    </source>
+    <source name="okis-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8019"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus kisutch RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/oncorhynchus_kisutch/Okis_V2"/>
+    </source>
+    <source name="omyk-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8022"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus mykiss RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/oncorhynchus_mykiss/USDA_OmyKA_1.1"/>
+    </source>
+    <source name="omyk-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8022"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus mykiss RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/oncorhynchus_mykiss/USDA_OmyKA_1.1"/>
+    </source>
+    <source name="oner-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8023"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus nerka RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/oncorhynchus_nerka/Oner_1.0"/>
+    </source>
+    <source name="oner-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8023"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus nerka RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/oncorhynchus_nerka/Oner_1.0"/>
+    </source>
+    <source name="otsh-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="74940"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus tshawytscha RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/oncorhynchus_tshawytscha/Otsh_v2.0"/>
+    </source>
+    <source name="otsh-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="74940"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus tshawytscha RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/oncorhynchus_tshawytscha/Otsh_v2.0"/>
+    </source>
+    <source name="onil-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8128"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oreochromis niloticus RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/oreochromis_niloticus/O_niloticus_UMD_NMBU"/>
+    </source>
+    <source name="onil-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8128"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oreochromis niloticus RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/oreochromis_niloticus/O_niloticus_UMD_NMBU"/>
+    </source>
+    <source name="pmon-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6687"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus monodon RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/penaeus_monodon/NSTDA_Pmon_1"/>
+    </source>
+    <source name="pmon-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6687"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus monodon RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/penaeus_monodon/NSTDA_Pmon_1"/>
+    </source>
+    <source name="pvan-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6689"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus vannamei RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/penaeus_vannamei/ASM378908v1"/>
+    </source>
+    <source name="pvan-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="6689"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Penaeus vannamei RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/penaeus_vannamei/ASM378908v1"/>
+    </source>
+    <source name="pfla-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8167"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Perca flavescens RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/perca_flavescens/PFLA_1.0"/>
+    </source>
+    <source name="pfla-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8167"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Perca flavescens RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/perca_flavescens/PFLA_1.0"/>
+    </source>
+    <source name="ssal-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8030"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salmo salar RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/salmo_salar/Ssal_v3.1"/>
+    </source>
+    <source name="ssal-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8030"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salmo salar RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/salmo_salar/Ssal_v3.1"/>
+    </source>
+    <source name="salp-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="2691554"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salvelinus sp. IW2-2015 RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/salvelinus_alpinus/ASM291031v2"/>
+    </source>
+    <source name="salp-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="2691554"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salvelinus sp. IW2-2015 RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/salvelinus_alpinus/ASM291031v2"/>
+    </source>
+    <source name="sdum-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="41447"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola dumerili RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/seriola_dumerili/Sdu_1.0"/>
+    </source>
+    <source name="sdum-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="41447"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola dumerili RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/seriola_dumerili/Sdu_1.0"/>
+    </source>
+    <source name="sdor-refseq-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="1841481"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola lalandi dorsalis RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/seriola_lalandi_dorsalis/Sedor1"/>
+    </source>
+    <source name="sdor-refseq-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="1841481"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola lalandi dorsalis RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/seriola_lalandi_dorsalis/Sedor1"/>
+    </source>
+    <source name="xgla-refseq-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8245"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Xiphias gladius RefSeq Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/cds_fasta/xiphias_gladius/ASM1685928v1"/>
+    </source>
+    <source name="xgla-refseq-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8245"/>
+      <property name="fasta-assembly.dataSourceName" value="RefSeq"/>
+      <property name="fasta-assembly.dataSetTitle" value="Xiphias gladius RefSeq Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="RefSeq"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/RefSeq/protein_fasta/xiphias_gladius/ASM1685928v1"/>
+    </source>
+
+
+    <!--Ensembl CDS and Protein Fasta-->
+
+    <source name="amex-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7994"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Astyanax mexicanus Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/astyanax_mexicanus/Astyanax_mexicanus-2.0"/>
+    </source>
+    <source name="amex-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7994"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Astyanax mexicanus Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/astyanax_mexicanus/Astyanax_mexicanus-2.0"/>
+    </source>
+    <source name="char-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7950"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Clupea harengus Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/clupea_harengus/Ch_v2.0.2"/>
+    </source>
+    <source name="char-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7950"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Clupea harengus Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/clupea_harengus/Ch_v2.0.2"/>
+    </source>
+    <source name="drer-ensembl-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7955"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Danio rerio Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/danio_rerio/GRCz11"/>
+    </source>
+    <source name="drer-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7955"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Danio rerio Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/danio_rerio/GRCz11"/>
+    </source>
+    <source name="dmel-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7227"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Drosophila melanogaster Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/drosophila_melanogaster/Release_6_plus_ISO1_MT"/>
+    </source>
+    <source name="dmel-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7227"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Drosophila melanogaster Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/drosophila_melanogaster/Release_6_plus_ISO1_MT"/>
+    </source>
+    <source name="eluc-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8010"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Esox lucius Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/esox_lucius/Eluc_v4"/>
+    </source>
+    <source name="eluc-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8010"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Esox lucius Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/esox_lucius/Eluc_v4"/>
+    </source>
+    <source name="gmor-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8049"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gadus morhua Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/gadus_morhua/gadMor3.0"/>
+    </source>
+    <source name="gmor-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8049"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Gadus morhua Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/gadus_morhua/gadMor3.0"/>
+    </source>
+    <source name="hhip-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8267"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Hippoglossus hippoglossus Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/hippoglossus_hippoglossus/fHipHip1.pri"/>
+    </source>
+    <source name="hhip-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8267"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Hippoglossus hippoglossus Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/hippoglossus_hippoglossus/fHipHip1.pri"/>
+    </source>
+    <source name="hsap-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="9606"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homo sapiens Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/homo_sapiens/GRCh38.p13"/>
+    </source>
+    <source name="hsap-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="9606"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Homo sapiens Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/homo_sapiens/GRCh38.p13"/>
+    </source>
+    <source name="ipun-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7998"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Ictalurus punctatus Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/ictalurus_punctatus/IpCoco_1.2"/>
+    </source>
+    <source name="ipun-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="7998"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Ictalurus punctatus Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/ictalurus_punctatus/IpCoco_1.2"/>
+    </source>
+    <source name="lgig-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="225164"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Lottia gigantea Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/lottia_gigantea/Helro1"/>
+    </source>
+    <source name="lgig-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="225164"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Lottia gigantea Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/lottia_gigantea/Helro1"/>
+    </source>
+    <source name="okis-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8019"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus kisutch Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/oncorhynchus_kisutch/Okis_V2"/>
+    </source>
+    <source name="okis-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8019"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus kisutch Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/oncorhynchus_kisutch/Okis_V2"/>
+    </source>
+    <source name="omyk-ensembl-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8022"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus mykiss Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/oncorhynchus_mykiss/USDA_OmyKA_1.1"/>
+    </source>
+    <source name="omyk-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8022"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus mykiss Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/oncorhynchus_mykiss/USDA_OmyKA_1.1"/>
+    </source>
+    <source name="oner-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8023"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus nerka Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/oncorhynchus_nerka/Oner_1.0"/>
+    </source>
+    <source name="oner-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8023"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oncorhynchus nerka Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/oncorhynchus_nerka/Oner_1.0"/>
+    </source>
+    <source name="onil-ensembl-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8128"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oreochromis niloticus Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/oreochromis_niloticus/O_niloticus_UMD_NMBU"/>
+    </source>
+    <source name="onil-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8128"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Oreochromis niloticus Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/oreochromis_niloticus/O_niloticus_UMD_NMBU"/>
+    </source>
+    <source name="ssal-ensembl-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8030"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salmo salar Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/salmo_salar/Ssal_v3.1"/>
+    </source>
+    <source name="ssal-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="8030"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Salmo salar Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/salmo_salar/Ssal_v3.1"/>
+    </source>
+    <source name="sdum-ensembl-cds" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="41447"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola dumerili Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/seriola_dumerili/Sdu_1.0"/>
+    </source>
+    <source name="sdum-ensembl-protein" type="fasta-assembly" version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="41447"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola dumerili Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/seriola_dumerili/Sdu_1.0"/>
+    </source>
+    <source name="sdor-ensembl-cds" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="1841481"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola lalandi dorsalis Ensembl Coding Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.CodingSequence"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="dna"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.idSuffix" value="-CDS"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.CDSFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/cds_fasta/seriola_lalandi_dorsalis/Sedor1"/>
+    </source>
+    <source name="sdor-ensembl-protein" type="fasta-assembly"  version="5.0.6">
+      <property name="fasta-assembly.taxonId" value="1841481"/>
+      <property name="fasta-assembly.dataSourceName" value="Ensembl"/>
+      <property name="fasta-assembly.dataSetTitle" value="Seriola lalandi dorsalis Ensembl Protein Sequence"/>
+      <property name="fasta-assembly.className" value="org.intermine.model.bio.Polypeptide"/>
+      <property name="fasta-assembly.classAttribute" value="primaryIdentifier"/>
+      <property name="fasta-assembly.geneSource" value="Ensembl"/>
+      <property name="fasta-assembly.sequenceType" value="protein"/>
+      <property name="fasta-assembly.includes" value="*.fa"/>
+      <property name="fasta-assembly.loaderClassName" value="org.intermine.bio.dataconversion.ProteinFastaAssemblyLoaderTask"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/Ensembl/protein_fasta/seriola_lalandi_dorsalis/Sedor1"/>
+    </source>
+
+
+    <!--xRefs-->
+    <source name="amex-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="7994"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/astyanax_mexicanus"/>
+    </source>
+    <source name="char-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="7950"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/clupea_harengus"/>
+    </source>
+    <source name="eluc-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8010"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/esox_lucius"/>
+    </source>
+    <source name="gmor-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8049"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/gadus_morhua"/>
+    </source>
+    <source name="hhip-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8267"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/hippoglossus_hippoglossus"/>
+    </source>
+    <source name="ipun-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="7998"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/ictalurus_punctatus"/>
+    </source>
+    <source name="okis-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8019"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/oncorhynchus_kisutch"/>
+    </source>
+    <source name="omyk-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8022"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/oncorhynchus_mykiss"/>
+    </source>
+    <source name="oner-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8023"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/oncorhynchus_nerka"/>
+    </source>
+    <source name="onil-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8128"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/oreochromis_niloticus"/>
+    </source>
+    <source name="ssal-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="8030"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/salmo_salar"/>
+    </source>
+    <source name="sdum-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="41447"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/seriola_dumerili"/>
+    </source>
+    <source name="sdor-xref" type="cross-references" version="5.0.6">
+      <property name="taxonId" value="1841481"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/xref/seriola_lalandi_dorsalis"/>
+    </source>
+
+
+    <!--KEGG-->
+    <source name="kegg" type="kegg-pathway-url" version="5.0.6">
+      <property name="pathway.organisms" value="6689 6706 7227 7955 7994 7998 8010 8022 8030 8128 8167 8245 8267 9606 27706 29159 41447 74940 225164 481459 1841481 2691554"/>
+      <property name="urlPrefix" value="https://www.genome.jp/pathway/"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/KEGG_genes/"/>
+    </source>
+
+
+    <!--Pubmed-->
+    <source name="ncbi-pubmed-gene" type="pubmed-gene-source" version="5.0.6">
+      <property name="geneSource" value="RefSeq"/>
+      <property name="pubmed.organisms" value="6565 6596 6687 6689 6706 7227 7950 7955 7994 7998 8010 8019 8022 8023 8030 8049 8128 8167 8245 8267 9606 27706 29159 34816 41447 74940 225164 481459 1841481 2691554"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/ncbi-pubmed-gene/"/>
+    </source>
+    <source name="ensembl-pubmed-gene" type="pubmed-gene-source" version="5.0.6">
+      <property name="geneSource" value="Ensembl"/>
+      <property name="pubmed.organisms" value="7227 7950 7955 7994 7998 8010 8019 8049 8128 9606 41447 1841481"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/ensembl-pubmed-gene/"/>
+    </source>
+
+
+    <!--Beyond this point, Gene.source is not used as a merge key for genes-->
+
+
+    <!--UniProt-->
+
+    <!--First iteration UniProt: RefSeq-->
+    <source name="uniprot-to-refseq" type="uniprot-evidence" version="5.0.6">
+      <property name="uniprot.organisms" value="6565 6596 6687 6689 6706 7227 7950 7955 7994 7998 8010 8019 8022 8023 8030 8049 8128 8167 8245 8267 9606 27706 29159 34816 41447 74940 225164 481459 1841481 2691554"/>
+      <property name="creatego" value="true"/>
+      <property name="creategenes" value="true"/>
+      <property name="allowduplicates" value="false"/>
+      <property name="loadfragments" value="true"/>
+      <property name="loadtrembl" value="true"/>
+      <property name="configFile" value="uniprot-to-refseq_config.properties"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/UniProt"/>
+    </source>
+
+    <!--Second iteration UniProt: Ensembl-->
+    <source name="uniprot-to-ensembl" type="uniprot-evidence" version="5.0.6">
+      <property name="uniprot.organisms" value="6565 6596 6687 6689 6706 7227 7950 7955 7994 7998 8010 8019 8022 8023 8030 8049 8128 8167 8245 8267 9606 27706 29159 34816 41447 74940 225164 481459 1841481 2691554"/>
+      <property name="creatego" value="true"/>
+      <property name="creategenes" value="true"/>
+      <property name="allowduplicates" value="false"/>
+      <property name="loadfragments" value="true"/>
+      <property name="loadtrembl" value="true"/>
+      <property name="configFile" value="uniprot-to-ensembl_config.properties"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/UniProt"/>
+    </source>
+
+    <!--UniProt-Fasta-->
+    <source name="uniprot-fasta" type="fasta" version="5.0.6">
+      <property name="fasta.taxonId" value="6565 6596 6687 6689 6706 7227 7950 7955 7994 7998 8010 8019 8022 8023 8030 8049 8128 8167 8245 8267 9606 27706 29159 34816 41447 74940 225164 481459 1841481 2691554"/>
+      <property name="fasta.className" value="org.intermine.model.bio.Protein"/>
+      <property name="fasta.classAttribute" value="primaryAccession"/>
+      <property name="fasta.dataSourceName" value="UniProt"/>
+      <property name="fasta.dataSetTitle" value="UniProt Fasta"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/UniProt"/>
+      <property name="fasta.includes" value="uniprot_sprot_varsplic.fasta"/>
+      <property name="fasta.sequenceType" value="protein"/>
+      <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.UniProtFastaLoaderTask"/>
+    </source>
+
+    <!--UniProt-keywords-->
+    <source name="uniprot-keywords" type="uniprot-keywords" version="5.0.6">
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/UniProt"/>
+      <property name="src.data.dir.includes" value="keywlist.xml"/>
+    </source>
+
+
+    <!--InterPro-->
+    <source name="interpro" type="interpro" version="5.0.6">
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/InterPro"/>
+    </source>
+
+
+    <!--InterPro to protein (protein2ipr)-->
+    <source name="protein2ipr" type="protein2ipr" version="5.0.6">
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/protein2ipr"/>
+      <property name="src.data.dir.includes" value="protein2ipr.dat"/>
+      <property name="osAlias" value="os.production"/>
+    </source>
+
+
+    <!--OrthoDB-->
+    <!--Data file(s) must be sorted on column 2 before loading!-->
+    <source name="orthodb" type="orthodb-clusters" version="5.0.6">
+      <property name="dataSourceName" value="OrthoDB"/>
+      <property name="dataSetTitle" value="OrthoDB data set"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/OrthoDB"/>
+      <property name="orthodb.organisms" value="6565 7950 7955 7994 7998 8010 8019 8022 8030 8128 9606 29159 41447 74940 225164 2691554"/>
+    </source>
+    <source name="aquamine-ortho" type="orthodb-clusters" version="5.0.6">
+      <property name="dataSourceName" value="AquaMine"/>
+      <property name="dataSetTitle" value="AquaMine-Ortho data set"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/AquaMine-Ortho"/>
+      <property name="orthodb.organisms" value="6565 6596 6687 6689 6706 7227 7950 7955 7994 7998 8010 8019 8022 8023 8030 8049 8128 8167 8245 8267 9606 27706 29159 34816 41447 74940 225164 481459 1841481 2691554"/>
+    </source>
+
+
+    <!--EnsemblCompara-->
+    <source name="ensembl-compara" type="ensembl-compara-custom" version="5.0.6">
+      <property name="ensemblcompara.organisms" value="7950 7955 7994 7998 8010 8019 8022 8030 8049 8128 9606 29159 41447 225164 1841481"/>
+      <property name="ensemblcompara.homologues" value="7950 7955 7994 7998 8010 8019 8022 8030 8049 8128 9606 29159 41447 225164 1841481"/>
+      <property name="src.data.dir" location="/db/aquamine_v1.1/datasets/EnsemblCompara"/>
+    </source>
+
+
+    <!-- Load these last sources at the end, after all other sources -->
+
+
+    <!--Update data sources-->
+
+    <source name="update-data-sources" type="update-data-sources" version="5.0.6">
+      <property name="src.data.file" location="datasources.xml"/>
+      <property name="dataSourceFile" value="/db/aquamine_v1.1/datasets/UniProt/xrefs/dbxref.txt"/>
+    </source>
+    <!--Custom data source info not in UniProt file-->
+    <source name="update-data-sources-custom" type="update-data-sources" version="5.0.6">
+      <property name="src.data.file" location="datasources-custom.xml"/>
+      <property name="dataSourceFile" value="/db/aquamine_v1.1/datasets/datasource-info/customsources.txt"/>
+    </source>
+
+
+    <!--NCBI Entrez-->
+
+    <source name="update-publications" type="update-publications-key" version="5.0.6">
+      <property name="src.data.file" location="publications.xml"/>
+      <property name="loadFullRecord" value="true"/>
+    </source>
+    <source name="entrez-organism" type="entrez-organism-key" version="5.0.6">
+      <property name="src.data.file" location="organisms.xml"/>
+    </source>
+
+
+  </sources>
+
+  <post-processing>
+
+    <post-process name="create-chromosome-locations-and-lengths"/>
+    <post-process name="create-references"/>
+    <post-process name="transfer-sequences-cds"/>
+    <post-process name="create-overlap-view"/>
+    <post-process name="create-location-overlap-index"/>
+    <post-process name="do-sources"/>
+    <post-process name="create-attribute-indexes"/>
+    <post-process name="create-search-index"/>
+    <post-process name="summarise-objectstore"/>
+    <post-process name="create-autocomplete-index"/>
+
+  </post-processing>
+
+</project>

@@ -1,0 +1,4 @@
+<query name="" model="testmodel" view="Employee.name Employee.fullTime Employee.age Employee.end" sortOrder="Employee.name asc Employee.fullTime asc Employee.age asc Employee.end asc" constraintLogic="A">
+  <constraint path="Employee.age" op="&gt;" value="10" code="A"/>
+  <constraint path="Employee.fullTime" op="=" value="true" code="B"/>
+</query>

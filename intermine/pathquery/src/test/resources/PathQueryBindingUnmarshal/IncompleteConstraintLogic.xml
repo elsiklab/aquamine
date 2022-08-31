@@ -1,0 +1,3 @@
+<query name="" model="testmodel" view="Employee.name Employee.fullTime Employee.age Employee.end" constraintLogic="A">
+  <constraint path="Employee.age" op="&gt;" value="bad"  code="A"/>
+</query>
