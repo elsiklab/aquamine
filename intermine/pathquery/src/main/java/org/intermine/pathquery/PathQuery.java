@@ -1,7 +1,7 @@
 package org.intermine.pathquery;
 
 /*
- * Copyright (C) 2002-2021 FlyMine
+ * Copyright (C) 2002-2022 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -40,7 +40,6 @@ import org.intermine.metadata.ClassDescriptor;
 import org.intermine.metadata.Model;
 import org.intermine.metadata.TypeUtil;
 import org.intermine.metadata.Util;
-
 
 /**
  * Class to represent a path-based query.

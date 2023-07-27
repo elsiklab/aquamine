@@ -86,8 +86,6 @@
     });
 </script>
 
-
-
 <div id="tool_bar_item_display" style="display:none;width:100px" class="tool_bar_item">
     <html:link anchor="relatedTemplates" action="bagDetails?bagName=${bag.name}">Related templates</html:link><br/>
     <html:link anchor="widgets" action="bagDetails?bagName=${bag.name}">Related widgets</html:link>
@@ -191,7 +189,6 @@
 
 <div id="clearLine">&nbsp;</div>
 
-
 <div style="clear:both">
 
 <%-- Bag Description --%>
@@ -237,8 +234,7 @@
 </TD>
 
 <c:if test="${!invalid}">
-    <TD align="left" valign="top" width="40%">
-
+    <TD align="left" valign="top" width="30%">
 
     <!-- closing toolbar div -->
 
@@ -253,7 +249,6 @@
       </html:form>
 </c:if>
 <c:if test="${!invalid}">
-
 
     <%-- BagDisplayers --%>
       <html:form action="/modifyBagDetailsAction">
@@ -295,6 +290,11 @@
   </c:forEach>
   </ol>
   <div style="clear:both"></div>
+</div>
+
+<div class="body">
+  <p><span class="bigmessage"><font color="#a51b00"><c:out value="${WEB_PROPERTIES['bags.widgetsNote.header']}" escapeXml="false"/></font></span></p>
+  <p><c:out value="${WEB_PROPERTIES['bags.widgetsNote.text']}" escapeXml="false"/></p>
 </div>
 
 <script language="javascript">
@@ -341,7 +341,6 @@
 <div class="heading">
    <a id="relatedTemplates">Template results for '${bag.name}' &nbsp;</a>
   </div>
-
 
   <div class="body">
   <fmt:message key="bagDetails.templatesHelp"/>

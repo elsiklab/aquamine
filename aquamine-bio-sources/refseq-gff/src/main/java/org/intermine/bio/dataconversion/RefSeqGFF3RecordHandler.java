@@ -1,7 +1,7 @@
 package org.intermine.bio.dataconversion;
 
 /*
- * Copyright (C) 2002-2021 FlyMine
+ * Copyright (C) 2002-2022 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -32,22 +32,38 @@ public class RefSeqGFF3RecordHandler extends BaseGFF3RecordHandler
     public RefSeqGFF3RecordHandler (Model model) {
         super(model);
 
-        // Note: these may change with each release depending on the feature classes in the GFF files.
-        // Class names not in model for this mine will be ignored.
         refsAndCollections.put("Transcript", "gene");
         refsAndCollections.put("CDS", "transcript");
         refsAndCollections.put("Exon", "transcripts");
-        refsAndCollections.put("NcRNA", "gene");
 
+        // Note: these may change with each release depending on the feature classes in the GFF files.
+        // Comment out lines that don't apply to this mine release.
+        refsAndCollections.put("AntisenseRNA", "gene");
         refsAndCollections.put("CGeneSegment", "gene");
+        refsAndCollections.put("DGeneSegment", "gene");
+        // DLoop has no parent
         refsAndCollections.put("GuideRNA", "gene");
+        // Insulator has no parent
+        refsAndCollections.put("JGeneSegment", "gene");
         refsAndCollections.put("LncRNA", "gene");
+        refsAndCollections.put("MiRNA", "transcript");
         refsAndCollections.put("MRNA", "gene");
+        refsAndCollections.put("NcRNA", "gene");
+        // OriginOfReplication has no parent
+        refsAndCollections.put("PrimaryTranscript", "gene");
+        refsAndCollections.put("RNaseMRPRNA", "gene");
+        refsAndCollections.put("RNasePRNA", "gene");
         refsAndCollections.put("RRNA", "gene");
+        refsAndCollections.put("ScRNA", "gene");
         refsAndCollections.put("SnoRNA", "gene");
         refsAndCollections.put("SnRNA", "gene");
+        refsAndCollections.put("SRPRNA", "gene");
+        // TandemRepeat has no parent
+        refsAndCollections.put("TelomeraseRNA", "gene");
         refsAndCollections.put("TRNA", "gene");
+        refsAndCollections.put("VaultRNA", "gene");
         refsAndCollections.put("VGeneSegment", "gene");
+        refsAndCollections.put("YRNA", "gene");
     }
 
     /**

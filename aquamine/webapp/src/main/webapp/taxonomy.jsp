@@ -13,10 +13,12 @@
     <script type="text/javascript" src="jstree/dist/jstree.min.js"></script>
     <style>
 	div#content-wrap {margin: 10px 20px 10px 20px; min-height: 500px;}
-	li.category {font-weight: bold;}
+	.category {font-weight: bold;}
         span.other-categories {font-weight: normal;}
-	li.organism {font-style: italic; font-weight: normal;}
+	.organism {font-style: italic; font-weight: normal;}
         div#jstree_ortho { font-size: 14px; }
+	#rbh-table { width:100%; }
+	#rbh-table th, #rbh-table td {font-size: 14px; padding: 5px;}
     </style>
     <script type="text/javascript">
 	jQuery(document).ready(function() { 
@@ -47,6 +49,8 @@
 <div id="content-wrap">
 
 <!-- INSERT CONTENT HERE -->
+
+<h3>Taxonomy Tree for the AquaMine-Ortho Dataset</h3><br>
 
 <p>All AquaMine species are shown in the taxonomic tree below, which is based on information from the NCBI taxonomy database. The taxon names shown in bold are the last common ancestral groups that can be selected when querying the AquaMine-Ortho dataset.</p>
 
@@ -206,5 +210,52 @@
 			</li>
 		</ul>
 	</div>
+
+    <br>
+	<h3>Reciprocal Best Hit pairs in the AquaMine-RBH dataset</h3><br>
+	<p>Model organisms or well-annotated species were compared to other members of a relevant taxonomic group with a similar evolutionary history of whole genome duplication to compute reciprocal best hits (RBH), which infer one-to-one orthology. Homo sapiens RBH were computed for the Protostomia and Lepisosteus oculatus, but not for Teleostei due to an extra whole genome duplication event in Teleostei compared to mammals. Salmonids were not compared to other Teleostei due an extra whole genome duplication event in the Salmonids compared to the other Teleostei.</p><br>
+
+	<table id="rbh-table" cellspacing=0 cellpadding=0 cellborder=0 border=1>
+		<thead>
+			<tr>
+				<th><strong>Model Organism or Well Annotated Species</strong></th>
+				<th><strong>Comparison Species</strong></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="organism">Danio rerio</td>
+				<td>Other Teleostei except Salmonids</td>
+			</tr>
+			<tr>
+				<td class="organism">Drosophila melanogaster</td>
+				<td>Other Arthropods</td>
+			</tr>
+			<tr>
+				<td class="organism">Homo sapiens</td>
+				<td>Protostomia and Lepisosteus oculatus</td>
+			</tr>
+			<tr>
+				<td class="organism">Lottia gigantea</td>
+				<td>Other Mollusks</td>
+			</tr>
+			<tr>
+				<td class="organism">Oncorhynchus kisutch</td>
+				<td>Other Salmonids</td>
+			</tr>
+			<tr>
+				<td class="organism">Oncorhynchus mykiss</td>
+				<td>Other Salmonids</td>
+			</tr>
+			<tr>
+				<td class="organism">Oreochromis niloticus</td>
+				<td>Other Neoteleostei</td>
+			</tr>
+			<tr>
+				<td class="organism">Salmo salar</td>
+				<td>Other Salmonids</td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>

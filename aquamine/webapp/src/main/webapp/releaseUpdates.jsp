@@ -34,8 +34,28 @@
     <div id="content-wrap">
       <div id="release-updates">
         <div id="new-release-note">
-          <p>This is the first public release of AquaMine. Please see the data sources page for a full list of data and their versions.</p>
+          <p>AquaMine has been updated to the latest version 1.2. Please see the data sources page for a full list of data and their versions.</p>
           <p>If you have any questions, please see our docs and youtube videos. Please do not hesitate to contact us should you require any further assistance. For all types of help and feedback email <c:out value="${WEB_PROPERTIES['feedback.destination']}"/>.</p>
+        </div>
+        <br/>
+        <div class="note_header">
+          <h3>AquaMine v1.2 release</h3>
+          <h5>July 2023</h5>
+        </div>
+        <div class="note_desc">
+          <h4>New species</h4>
+          <ul>
+            <li><i>Coregonus clupeaformis</i></li>
+            <li><i>Etheostoma cragini</i></li>
+            <li><i>Haliotis rufescens</i></li>
+            <li><i>Hippoglossus stenolepis</i></li>
+            <li><i>Lepisosteus oculatus</i></li>
+            <li><i>Mugil cephalus</i></li>
+            <li><i>Oncorhynchus gorbuscha</i></li>
+            <li><i>Oncorhynchus keta</i></li>
+            <li><i>Procambarus clarkii</i></li>
+          </ul>
+          <br/>
         </div>
         <br/>
         <div class="note_header">

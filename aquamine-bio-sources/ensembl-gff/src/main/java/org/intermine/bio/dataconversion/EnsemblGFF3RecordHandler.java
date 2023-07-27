@@ -1,7 +1,7 @@
 package org.intermine.bio.dataconversion;
 
 /*
- * Copyright (C) 2002-2021 FlyMine
+ * Copyright (C) 2002-2022 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -23,12 +23,6 @@ import org.intermine.xml.full.Item;
 
 public class EnsemblGFF3RecordHandler extends BaseGFF3RecordHandler
 {
-    protected Map<String,String> aliasToRefId = new HashMap<String,String>();
-    protected Map<String,String> geneToRefId = new HashMap<String,String>();
-    protected Map<String,String> xRefToRefId = new HashMap<String,String>();
-
-    private static final String ENC = "UTF-8";
-
     /**
      * Create a new EnsemblGFF3RecordHandler for the given data model.
      * @param model the model for which items will be created
@@ -36,26 +30,30 @@ public class EnsemblGFF3RecordHandler extends BaseGFF3RecordHandler
     public EnsemblGFF3RecordHandler (Model model) {
         super(model);
 
-        // Note: these may change with each release depending on the feature classes in the GFF files.
         refsAndCollections.put("Transcript", "gene");
         refsAndCollections.put("CDS", "transcript");
         refsAndCollections.put("Exon", "transcripts");
-        refsAndCollections.put("NcRNA", "gene");
 
+        // Note: these may change with each release depending on the feature classes in the GFF files.
+        // Comment out lines that don't apply to this mine release.
         refsAndCollections.put("CGeneSegment", "gene");
         refsAndCollections.put("DGeneSegment", "gene");
-        //refsAndCollections.put("JGeneSegment", "gene");
+        refsAndCollections.put("JGeneSegment", "gene");
         refsAndCollections.put("LncRNA", "gene");
         refsAndCollections.put("MiRNA", "gene");
         refsAndCollections.put("MRNA", "gene");
+        refsAndCollections.put("NcRNA", "gene");
+        refsAndCollections.put("PreMiRNA", "gene");
+        refsAndCollections.put("RNaseMRPRNA", "gene");
+        refsAndCollections.put("RNasePRNA", "gene");
         refsAndCollections.put("RRNA", "gene");
-        refsAndCollections.put("Ribozyme", "gene");
-        refsAndCollections.put("ScaRNA", "gene");
+        refsAndCollections.put("ScRNA", "gene");
         refsAndCollections.put("SnoRNA", "gene");
         refsAndCollections.put("SnRNA", "gene");
-        refsAndCollections.put("SRNA", "gene");
+        refsAndCollections.put("SRPRNA", "gene");
+        refsAndCollections.put("TransposableElement", "gene");
         refsAndCollections.put("TRNA", "gene");
-        refsAndCollections.put("VaultRNA", "gene");
+        refsAndCollections.put("UnconfirmedTranscript", "gene");
         refsAndCollections.put("VGeneSegment", "gene");
         refsAndCollections.put("YRNA", "gene");
     }
@@ -84,7 +82,8 @@ public class EnsemblGFF3RecordHandler extends BaseGFF3RecordHandler
         setFeatureAttribute(record, "protein_id", "proteinIdentifier");
 
         // Extra processing for genes
-        if (clsName.equals("Gene"))  {
+        // TODO: General check if inherits from Gene
+        if (clsName.equals("Gene") || clsName.equals("TransposableElementGene"))  {
             // Set description for gene only
             setFeatureDescription(record);
 

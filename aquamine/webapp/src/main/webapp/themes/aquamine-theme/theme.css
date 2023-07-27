@@ -214,15 +214,19 @@ table.results tr td.highlightObject {
   background-color: #ee6;
 }
 
-/* add horizontal scrollbar to large tables */
+/* add horizontal scrollbar to large tables if needed */
 div.results.collection-table {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 /* force wrapping of sequence table cells */
 table.im-results-table td.residues {
   overflow-wrap: break-word;
   max-width: 500px;
+}
+div.report-page #header_wrap table td {
+  vertical-align:top;
+  word-break: break-word;
 }
 
 /* sequences in pop-ups are too long */

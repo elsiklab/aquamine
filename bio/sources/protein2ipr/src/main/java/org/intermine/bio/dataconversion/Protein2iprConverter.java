@@ -1,7 +1,7 @@
 package org.intermine.bio.dataconversion;
 
 /*
- * Copyright (C) 2002-2021 FlyMine
+ * Copyright (C) 2002-2022 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -202,6 +202,8 @@ public class Protein2iprConverter extends BioFileConverter
             dbName = "HAMAP";
         } else if (dbId.startsWith("cd")) {
             dbName = "Conserved Domain Database";
+        } else if (dbId.startsWith("NF")) {
+            dbName = "NCBIfam";
         } else {
             throw new RuntimeException("Unknown DB found. ID: " + dbId);
         }

@@ -1,7 +1,7 @@
 package org.intermine.bio.dataconversion;
 
 /*
- * Copyright (C) 2002-2021 FlyMine
+ * Copyright (C) 2002-2022 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -64,6 +64,7 @@ public class GFF3Converter extends DataConverter
     private GFF3SeqHandler sequenceHandler;
     private boolean dontCreateLocations;
     private boolean loadDuplicateEntities = false;
+    private boolean loadSequenceAlterations = false;
     private final Map<String, Item> dataSets = new HashMap<String, Item>();
     private final Map<String, Item> dataSources = new HashMap<String, Item>();
 
@@ -807,6 +808,23 @@ public class GFF3Converter extends DataConverter
      */
     public boolean getLoadDuplicateEntities() {
         return this.loadDuplicateEntities;
+    }
+
+    /**
+     * Set the loadSequenceAlterations flag
+     * @param loadSequenceAlterations loadSequenceAlterations flag
+     */
+    public void setLoadSequenceAlterations(boolean loadSequenceAlterations) {
+        System.out.println("Setting loadSequenceAlterations to " + loadSequenceAlterations);
+        this.loadSequenceAlterations = loadSequenceAlterations;
+    }
+
+    /**
+     * Return the value of loadSequenceAlterations flag
+     * @return boolean loadSequenceAlterations flag
+     */
+    public boolean getLoadSequenceAlterations() {
+        return this.loadSequenceAlterations;
     }
 
     /**
